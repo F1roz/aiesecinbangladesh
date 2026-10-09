@@ -125,31 +125,66 @@
     <section class="section">
       <div class="container" style="max-width:760px;">
         <div class="form-card reveal">
-          <form data-ajax-form data-email-endpoint="https://formsubmit.co/ajax/firoz.fahim@aiesec.net" data-sheet-endpoint="PASTE_YOUR_GOOGLE_APPS_SCRIPT_URL_HERE" aria-label="Membership application form">
+          <form data-ajax-form data-email-endpoint="https://formsubmit.co/ajax/firoz.fahim@aiesec.net" data-sheet-endpoint="config" aria-label="Membership application form">
             <input type="hidden" name="_subject" value="New Membership Application — AIESEC in Bangladesh">
             <input type="text" name="_honey" style="display:none" tabindex="-1" autocomplete="off">
+            <input type="hidden" name="Form" value="Membership">
+            <input type="hidden" name="EXPA LC ID" value="" data-lc-id-for="m-lc">
             <div class="field-row">
-              <div class="field"><label for="m-name">Full name</label><input id="m-name" name="Full name" type="text" required></div>
-              <div class="field"><label for="m-age">Age</label><input id="m-age" name="Age" type="number" min="16" max="35" required></div>
+              <div class="field"><label for="m-first">First name</label><input id="m-first" name="First name" type="text" autocomplete="given-name" required></div>
+              <div class="field"><label for="m-last">Last name</label><input id="m-last" name="Last name" type="text" autocomplete="family-name" required></div>
             </div>
-            <div class="field"><label for="m-uni">University name</label><input id="m-uni" name="University" type="text" required></div>
+            <div class="field-row">
+              <div class="field"><label for="m-dob">Date of birth</label><input id="m-dob" name="Date of birth" type="date" required></div>
+              <div class="field"><label for="m-uni">University name</label><input id="m-uni" name="University" type="text" required></div>
+            </div>
             <div class="field-row">
               <div class="field"><label for="m-hometown">Hometown</label><input id="m-hometown" name="Hometown" type="text" required></div>
               <div class="field"><label for="m-dept">Department</label><input id="m-dept" name="Department" type="text" required></div>
             </div>
             <div class="field-row">
-              <div class="field"><label for="m-phone">Phone number</label><input id="m-phone" name="Phone" type="tel" required></div>
-              <div class="field"><label for="m-whatsapp">WhatsApp number</label><input id="m-whatsapp" name="WhatsApp" type="tel" required></div>
+              <div class="field"><label for="m-phone">Phone number</label><input id="m-phone" name="Phone" type="tel" autocomplete="tel" placeholder="01XXXXXXXXX" required></div>
+              <div class="field"><label for="m-whatsapp">WhatsApp number</label><input id="m-whatsapp" name="WhatsApp" type="tel" placeholder="01XXXXXXXXX" required></div>
             </div>
-            <div class="field"><label for="m-email">Email</label><input id="m-email" name="Email" type="email" required></div>
-            <div class="field"><label for="m-lc">Preferred Local Committee</label>
-              <select id="m-lc" name="Preferred Local Committee">
-                <option value="">No preference</option>
-                <option>AIESEC in Dhaka North</option>
-                <option>AIESEC in Dhaka North East</option>
-                <option>AIESEC in Dhaka NorthWestern</option>
-                <option>AIESEC in Dhaka South</option>
-              </select>
+            <div class="field"><label for="m-email">Email</label><input id="m-email" name="Email" type="email" autocomplete="email" required></div>
+            <div class="field-row">
+              <div class="field"><label for="m-lc">Preferred Local Committee</label>
+                <select id="m-lc" name="Preferred Local Committee" data-lc-select>
+                  <option value="">No preference</option>
+                </select>
+              </div>
+              <div class="field"><label for="m-contact">Best way to reach you</label>
+                <select id="m-contact" name="Preferred contact" required>
+                  <option>WhatsApp</option>
+                  <option>Email</option>
+                </select>
+              </div>
+            </div>
+            <div class="field-row">
+              <div class="field"><label for="m-why">What draws you to AIESEC?</label>
+                <select id="m-why" name="Motivation" required>
+                  <option value="" disabled selected>Choose one</option>
+                  <option>Leadership experience</option>
+                  <option>Personal development</option>
+                  <option>Global networking</option>
+                  <option>Making an impact</option>
+                </select>
+              </div>
+              <div class="field"><label for="m-ref">How did you hear about us?</label>
+                <select id="m-ref" name="Heard about us" required>
+                  <option value="" disabled selected>Choose one</option>
+                  <option>Friend</option>
+                  <option>Facebook</option>
+                  <option>Instagram</option>
+                  <option>LinkedIn</option>
+                  <option>University session or presentation</option>
+                  <option>Information booth on campus</option>
+                  <option>Event</option>
+                  <option>Email</option>
+                  <option>Search engine</option>
+                  <option>Other</option>
+                </select>
+              </div>
             </div>
             <button type="submit" class="btn btn-primary" style="width:100%;">Submit Application</button>
             <p class="form-note text-center" style="margin-top:14px;">No fee to apply. A team member will contact you within 3–5 business days.</p>
@@ -182,6 +217,7 @@
             <li><a href="volunteer-abroad.html">Volunteer Abroad</a></li>
             <li><a href="intern-abroad.html">Intern Abroad</a></li>
             <li><a href="teach-abroad.html">Teach Abroad</a></li>
+            <li><a href="apply.html">Apply Now</a></li>
             <li><a href="join-member.html">Become a Member</a></li>
             <li><a href="success-stories.html">Success Stories</a></li>
           </ul>
@@ -241,6 +277,8 @@
     <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#101820" stroke-width="2.4" stroke-linecap="round"><path d="M12 19V5M5 12l7-7 7 7"/></svg>
   </button>
 
+  <script src="js/expa-config.js" defer></script>
   <script src="js/main.js" defer></script>
+  <script src="js/expa-forms.js" defer></script>
 </body>
 </html>

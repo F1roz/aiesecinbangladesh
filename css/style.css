@@ -556,3 +556,44 @@
   
   /* Print */
   @media print{ .site-header, .site-footer, .float-chat, .back-top, #page-loader{ display:none !important; } }
+  /* ===== Apply Now / EXPA forms ===== */
+  .hp-field{ position:absolute !important; left:-9999px; width:1px; height:1px; opacity:0; }
+  fieldset.field{ border:0; padding:0; min-width:0; }
+  fieldset.field legend{ font-weight:600; font-size:.88rem; margin-bottom:10px; padding:0; }
+  .prog-options{ display:grid; grid-template-columns:repeat(3,1fr); gap:12px; }
+  @media (max-width:640px){ .prog-options{ grid-template-columns:1fr; } }
+  .prog-option{ position:relative; display:block; cursor:pointer; --accent: var(--blue); }
+  .prog-option--gv{ --accent: var(--volunteer); }
+  .prog-option--gta{ --accent: var(--talent); }
+  .prog-option--gte{ --accent: var(--teach); }
+  .prog-option input{ position:absolute; opacity:0; inset:0; margin:0; cursor:pointer; }
+  .prog-card{ display:flex; flex-direction:column; gap:4px; height:100%; padding:16px; border:1.5px solid var(--grey-line); border-radius:12px; background: var(--offwhite); transition: border-color var(--fast), background var(--fast), box-shadow var(--fast); }
+  .prog-card img{ height:28px; width:auto; align-self:flex-start; margin-bottom:8px; }
+  .prog-card strong{ font-size:.95rem; }
+  .prog-card span{ font-size:.8rem; color: var(--ink-soft); line-height:1.4; }
+  @media (max-width:640px){
+    .prog-card{ flex-direction:row; flex-wrap:wrap; align-items:center; column-gap:12px; }
+    .prog-card img{ margin:0; }
+    .prog-card span{ flex-basis:100%; }
+  }
+  .prog-option:hover .prog-card{ border-color: var(--accent); }
+  .prog-option input:checked + .prog-card{ border-color: var(--accent); background:#fff; box-shadow: inset 0 0 0 1px var(--accent); }
+  .prog-option input:focus-visible + .prog-card{ outline:2px solid var(--accent); outline-offset:2px; }
+
+  .input-prefix, .input-suffix{ position:relative; display:flex; align-items:stretch; }
+  .input-prefix span{ display:flex; align-items:center; padding:0 14px; border:1.5px solid var(--grey-line); border-right:0; border-radius:10px 0 0 10px; background: var(--grey); font-weight:600; font-size:.9rem; color: var(--ink-soft); }
+  .input-prefix input{ border-radius:0 10px 10px 0 !important; }
+  .input-suffix input{ padding-right:72px !important; }
+  .pass-toggle{ position:absolute; right:8px; top:50%; transform:translateY(-50%); background:none; border:0; padding:8px 10px; font-weight:600; font-size:.82rem; color: var(--blue); cursor:pointer; border-radius:6px; }
+  .pass-toggle:focus-visible{ outline:2px solid var(--blue); }
+
+  .check-field{ display:flex; gap:12px; align-items:flex-start; font-size:.88rem; color: var(--ink-soft); cursor:pointer; margin-bottom:6px; }
+  .check-field input{ width:18px; height:18px; margin-top:2px; flex-shrink:0; accent-color: var(--blue); }
+  .check-field a{ color: var(--blue); text-decoration:underline; }
+
+  .field input.is-invalid, .field select.is-invalid{ border-color:#D93025; background:#fff; }
+  .field-error{ color:#C5221F; font-size:.82rem; margin-top:6px; }
+  .field-error:empty{ display:none; }
+  .form-alert{ background:#FDECEA; color:#A50E0E; border-radius:10px; padding:12px 16px; font-size:.88rem; margin:18px 0 0; }
+  #apply-form .btn[type="submit"]{ margin-top:22px; }
+  #apply-form .btn[disabled]{ opacity:.7; cursor:progress; transform:none; }

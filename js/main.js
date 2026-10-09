@@ -26,7 +26,7 @@
     var href = a.getAttribute("href");
     if(!href || href.charAt(0)==="#" || a.target === "_blank" || a.hasAttribute("download")) return;
     if(/^https?:\/\//.test(href) || href.indexOf("mailto:")===0 || href.indexOf("tel:")===0 || href.indexOf("javascript:")===0) return;
-    if(!href.endsWith(".html") && href.indexOf(".html#")===-1 && href !== "/") return;
+    if(!/\.html($|[?#])/.test(href) && href !== "/") return;
     e.preventDefault();
     var loader = document.getElementById("page-loader");
     if(loader){
@@ -207,6 +207,12 @@
       var success = wrap ? wrap.querySelector(".form-success") : null;
       var endpoint = form.getAttribute("data-email-endpoint");
       var sheetEndpoint = form.getAttribute("data-sheet-endpoint");
+      // data-sheet-endpoint="config" → use the shared URL in js/expa-config.js
+      if(sheetEndpoint === "config"){
+        sheetEndpoint = (window.AIESEC_BD_CONFIG || {}).SHEET_ENDPOINT || "";
+      }
+      // Ignore the placeholder until a real Apps Script URL has been pasted in
+      if(!/^https:\/\//.test(sheetEndpoint || "")){ sheetEndpoint = ""; }
       var submitBtn = form.querySelector('button[type="submit"]');
       var originalBtnText = submitBtn ? submitBtn.textContent : "";
 
