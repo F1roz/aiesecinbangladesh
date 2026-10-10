@@ -205,7 +205,33 @@
 
   /* Hero */
   .ctb-hero{ position:relative; min-height: min(92vh, 820px); display:flex; align-items:flex-end; color:#fff; overflow:hidden; isolation:isolate; padding: 140px 0 56px; }
-  .ctb-hero-img{ position:absolute; inset:0; width:100%; height:100%; object-fit:cover; z-index:-2; }
+  .ctb-slides{ position:absolute; inset:0; z-index:-2; background:#0b1a14; }
+  .ctb-slide{ position:absolute; inset:0; margin:0; opacity:0; transition: opacity 1.2s ease; }
+  .ctb-slide.is-active{ opacity:1; }
+  .ctb-slide img{ width:100%; height:100%; object-fit:cover; transform: scale(1.02); }
+  .ctb-slide.is-active img{ animation: ctb-kenburns 9s ease-out both; }
+  @keyframes ctb-kenburns{ from{ transform: scale(1.02); } to{ transform: scale(1.1); } }
+  .ctb-slide .ctb-sample{ top:auto; bottom:110px; right:24px; }
+  .ctb-slide-ui{ position:absolute; right:max(24px, calc((100vw - var(--container)) / 2 + 24px)); bottom:112px; display:flex; flex-direction:column; align-items:flex-end; gap:12px; z-index:2; }
+  .ctb-slide-cap{ display:inline-flex; align-items:center; gap:8px; font-size:.84rem; font-weight:600; background: rgba(10,16,24,.55); backdrop-filter: blur(6px); padding:8px 14px; border-radius:100px; border:1px solid rgba(255,255,255,.18); transition: opacity .4s ease; }
+  .ctb-slide-cap svg{ width:16px; height:16px; color:#4FD1A5; flex:none; }
+  .ctb-slide-bars{ display:flex; gap:6px; }
+  .ctb-bar{ position:relative; width:34px; height:24px; border:0; padding:0; background:none; cursor:pointer; }
+  .ctb-bar::before{ content:""; position:absolute; left:0; right:0; top:50%; height:3px; margin-top:-1.5px; border-radius:3px; background: rgba(255,255,255,.35); }
+  .ctb-bar i{ position:absolute; left:0; top:50%; height:3px; margin-top:-1.5px; border-radius:3px; background:#fff; width:0; }
+  .ctb-bar[aria-current="true"] i{ animation: ctb-fill var(--dur, 6s) linear forwards; }
+  .ctb-bar.is-done i{ width:100%; }
+  .ctb-hero.is-paused .ctb-bar[aria-current="true"] i{ animation-play-state: paused; }
+  .ctb-hero.is-paused .ctb-slide.is-active img{ animation-play-state: paused; }
+  @keyframes ctb-fill{ to{ width:100%; } }
+  .ctb-bar:focus-visible{ outline:2px solid #fff; outline-offset:2px; border-radius:4px; }
+  @media (max-width: 1180px){
+    .ctb-slide-ui{ position:static; align-items:flex-start; margin:20px auto 0; padding:0 24px; width:100%; max-width: var(--container); }
+    .ctb-hero{ flex-direction:column; justify-content:flex-end; align-items:stretch; }
+  }
+  @media (max-width: 720px){
+    .ctb-slide .ctb-sample{ top:84px; bottom:auto; right:16px; }
+  }
   .ctb-hero::before{ content:""; position:absolute; inset:0; z-index:-1; background: linear-gradient(90deg, rgba(8,14,20,.78) 0%, rgba(8,14,20,.5) 45%, rgba(8,14,20,0) 75%), linear-gradient(180deg, rgba(10,16,24,.3) 0%, rgba(10,16,24,.15) 40%, rgba(0,50,36,.85) 100%); }
   @media (max-width: 720px){ .ctb-hero::before{ background: linear-gradient(180deg, rgba(8,14,20,.55) 0%, rgba(8,14,20,.6) 50%, rgba(0,50,36,.92) 100%); } }
   .ctb-hero .breadcrumb, .ctb-hero .breadcrumb a{ color: rgba(255,255,255,.8); }
@@ -347,8 +373,32 @@
   @media (max-width: 900px){ .life-grid{ grid-template-columns: repeat(2, minmax(0,1fr)); } }
   @media (max-width: 560px){ .life-grid{ grid-template-columns:1fr; } .life{ padding:20px 0; } }
 
+  /* Partners marquee */
+  .partners-section{ overflow:hidden; }
+  .partners-section .section-head{ margin-bottom:32px; }
+  .ctb-sample-inline{ display:inline-block; vertical-align:middle; margin-left:8px; background:#FFD84D; color:#101820; font: 800 .7rem/1 var(--font-body); letter-spacing:.08em; text-transform:uppercase; padding:6px 9px; border-radius:6px; }
+  .pt-marquee{ overflow:hidden; padding:8px 0 12px; -webkit-mask-image: linear-gradient(90deg, transparent, #000 7%, #000 93%, transparent); mask-image: linear-gradient(90deg, transparent, #000 7%, #000 93%, transparent); }
+  .pt-track{ list-style:none; display:flex; gap:20px; width:max-content; animation: pt-scroll var(--pt-dur, 40s) linear infinite; }
+  .pt-marquee:hover .pt-track, .pt-marquee:focus-within .pt-track{ animation-play-state: paused; }
+  @keyframes pt-scroll{ from{ transform: translateX(0); } to{ transform: translateX(calc(-50% - 10px)); } }
+  .pt-card{ flex:none; width:220px; padding:22px 18px 18px; border-radius:18px; background:#fff; border:1px solid var(--grey-line); display:flex; flex-direction:column; align-items:center; text-align:center; gap:12px; transition: border-color var(--fast), transform var(--fast) var(--ease), box-shadow var(--fast); }
+  .pt-card:hover{ border-color: var(--bd-green); transform: translateY(-3px); box-shadow: 0 14px 30px -18px rgba(0,0,0,.35); }
+  .pt-logo{ height:72px; width:100%; display:flex; align-items:center; justify-content:center; }
+  .pt-logo img{ max-height:64px; max-width:150px; object-fit:contain; filter: grayscale(1); opacity:.85; transition: filter var(--fast), opacity var(--fast); }
+  .pt-card:hover .pt-logo img{ filter:none; opacity:1; }
+  .pt-mono{ width:64px; height:64px; border-radius:16px; display:flex; align-items:center; justify-content:center; font: 700 1.25rem/1 var(--font-display); color: var(--bd-green); background: color-mix(in srgb, var(--bd-green) 10%, #fff); }
+  .pt-name{ font-weight:700; font-size:.95rem; line-height:1.3; }
+  .pt-type{ font-size:.78rem; color: var(--ink-soft); }
+  @media (max-width: 560px){ .pt-card{ width:180px; padding:18px 14px 16px; } .pt-track{ gap:14px; } }
   @media (prefers-reduced-motion: reduce){
-    .ctb-card, .ctb-dialog[open]{ animation:none; }
+    .pt-marquee{ -webkit-mask-image:none; mask-image:none; }
+    .pt-track{ animation:none; width:auto; flex-wrap:wrap; justify-content:center; padding:0 24px; }
+    .pt-track [aria-hidden="true"]{ display:none; }
+  }
+
+  @media (prefers-reduced-motion: reduce){
+    .ctb-card, .ctb-dialog[open], .ctb-slide.is-active img{ animation:none; }
+    .ctb-slide{ transition: opacity .01s; }
     .ctb-card, .ctb-card-photo img, .why{ transition:none; }
   }
   </style>
@@ -376,8 +426,8 @@
               <span class="mega-col-title">Programs</span>
               <span class="mega-col-title">Explore</span>
               <span class="mega-col-title">Updates</span>
-              <a href="volunteer-abroad.html" role="menuitem"><span class="dot" style="background:#F85A40"></span><span class="mega-txt"><strong>Volunteer Abroad</strong><span>4–6 week SDG-aligned projects</span></span></a>
-              <a href="local-committees.html" role="menuitem"><span class="dot" style="background:#037EF3"></span><span class="mega-txt"><strong>Local Committees</strong><span>3 committees across Dhaka</span></span></a>
+              <a href="volunteer-abroad.html" role="menuitem"><span class="dot" style="background:#F85A40"></span><span class="mega-txt"><strong>Volunteer Abroad</strong><span>6–8 week SDG-aligned projects</span></span></a>
+              <a href="local-committees.html" role="menuitem"><span class="dot" style="background:#037EF3"></span><span class="mega-txt"><strong>Local Committees</strong><span>4 committees across Dhaka</span></span></a>
               <a href="blog.html" role="menuitem"><span class="dot" style="background:#037EF3"></span><span class="mega-txt"><strong>Blog &amp; News</strong><span>Stories from our members</span></span></a>
               <a href="intern-abroad.html" role="menuitem"><span class="dot" style="background:#0CB9C1"></span><span class="mega-txt"><strong>Intern Abroad</strong><span>Paid global internships</span></span></a>
               <a href="success-stories.html" role="menuitem"><span class="dot" style="background:#037EF3"></span><span class="mega-txt"><strong>Success Stories</strong><span>Real exchange experiences</span></span></a>
@@ -415,9 +465,36 @@
 
     <!-- ===================== HERO ===================== -->
     <section class="ctb-hero">
-      <img class="ctb-hero-img" src="assets/images/hero-slide-2.jpg" alt="Lalbagh Fort in Old Dhaka under a blue sky">
+      <div class="ctb-slides" aria-roledescription="carousel" aria-label="Photos of Bangladesh">
+        <figure class="ctb-slide is-active"><img src="assets/images/hero-slide-2.jpg" alt="Lalbagh Fort in Old Dhaka under a blue sky" fetchpriority="high"></figure>
+      </div>
+      <script>
+      /* ============================================================
+         HERO PHOTOS (slider at the top of the page)
+         - To add a photo: save it with one of the file names below in
+           assets/images/come/ and it appears automatically. Photos
+           that don't exist yet are skipped, so nothing breaks.
+         - Wide landscape photos work best (at least 1920 px wide).
+           Keep each under ~500 KB so the page loads fast
+           (squoosh.app or tinypng.com can shrink them).
+         - caption: the place name shown in the corner.
+         - sample: true shows a "Sample photo" label; delete it once
+           the photo is a real Bangladesh photo.
+         ============================================================ */
+      window.CTB_HERO = [
+        { src: "assets/images/hero-slide-2.jpg",             caption: "Lalbagh Fort, Old Dhaka" },
+        { src: "assets/images/come/hero-sundarbans.jpg",     caption: "The Sundarbans" },
+        { src: "assets/images/come/hero-coxs-bazar.jpg",     caption: "Cox's Bazar" },
+        { src: "assets/images/come/hero-sylhet.jpg",         caption: "Tea gardens, Sylhet" },
+        { src: "assets/images/come/hero-old-dhaka.jpg",      caption: "Old Dhaka" },
+        { src: "assets/images/come/hero-rickshaw.jpg",       caption: "Rickshaws of Dhaka" },
+        { src: "assets/images/come/hero-bandarban.jpg",      caption: "Hills of Bandarban" },
+        { src: "assets/images/hero-slide-1.jpg",             caption: "AIESEC in Bangladesh members" },
+        { src: "assets/images/hero-slide-3.jpg",             caption: "Replace with a Bangladesh photo", sample: true }
+      ];
+      </script>
       <div class="container ctb-hero-inner">
-        <div class="breadcrumb"><a href="index.html">Home</a> / <span>Come to Bangladesh</span></div>
+        <!-- <div class="breadcrumb"><a href="index.html">Home</a> / <span>Come to Bangladesh</span></div> -->
         <p class="ctb-kicker"><span lang="bn">স্বাগতম</span> · Welcome</p>
         <h1>Discover Bangladesh</h1>
         <p class="ctb-lede">Volunteer, intern or teach with AIESEC in Bangladesh. Live with local youth, work with our partners, and see a country most travellers never get to know.</p>
@@ -430,6 +507,10 @@
           <li style="--c:var(--talent)"><b>Global Talent</b><span>Paid professional internships</span></li>
           <li style="--c:var(--teach)"><b>Global Teacher</b><span>Paid teaching positions</span></li>
         </ul>
+      </div>
+      <div class="ctb-slide-ui" hidden>
+        <p class="ctb-slide-cap" aria-live="polite"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 21s-7-6.2-7-11.5a7 7 0 0 1 14 0C19 14.8 12 21 12 21Z"/><circle cx="12" cy="9.5" r="2.5"/></svg><span></span></p>
+        <div class="ctb-slide-bars" role="group" aria-label="Choose photo"></div>
       </div>
     </section>
 
@@ -560,6 +641,43 @@
           requirements: ["Degree or studying in computer science or IT", "Good English", "Patience and clear communication"],
           provided: ["Monthly salary from the host college", "Help finding accommodation", "Airport pickup on arrival", "Visa support from AIESEC"]
         }
+      ];
+      </script>
+    </section>
+
+    <!-- ===================== PARTNERS ===================== -->
+    <section class="section partners-section" aria-labelledby="partners-title">
+      <div class="container">
+        <div class="section-head reveal">
+          <span class="eyebrow">Our partners</span>
+          <h2 id="partners-title">The organisations you'll work with <span class="ctb-sample-inline" hidden></span></h2>
+          <p>Schools, NGOs and companies across Bangladesh that host AIESEC volunteers, interns and teachers.</p>
+        </div>
+      </div>
+      <div class="pt-marquee" role="region" aria-label="Partner organisations">
+        <ul class="pt-track"></ul>
+      </div>
+      <script>
+      /* ============================================================
+         EDIT YOUR PARTNERS HERE
+         - name: partner's name (shown under the logo)
+         - type: short label, e.g. "NGO · Dhaka" or "School · Sylhet"
+         - logo: upload to assets/images/partners/ and put the path,
+           e.g. "assets/images/partners/brac.png". Transparent PNG or
+           SVG logos look best. No logo yet? Leave "" and the
+           partner's initials show instead.
+         - Add or delete lines freely; the slider adjusts its speed.
+         - These are SAMPLES: replace them and delete "sample: true,".
+         ============================================================ */
+      window.CTB_PARTNERS = [
+        { sample: true, name: "Partner School",        type: "School · Dhaka",      logo: "" },
+        { sample: true, name: "HEED Bangladesh",           type: "NGO · Dhaka",        logo: "" },
+        { sample: true, name: "Partner Company",       type: "Company · Dhaka",     logo: "" },
+        { sample: true, name: "Partner College",       type: "College · Chattogram", logo: "" },
+        { sample: true, name: "Partner Foundation",    type: "Foundation · Dhaka",  logo: "" },
+        { sample: true, name: "Partner Tech Startup",  type: "Startup · Dhaka",     logo: "" },
+        { sample: true, name: "Partner Health Org",    type: "Health · Dhaka",      logo: "" },
+        { sample: true, name: "Partner Eco Network",   type: "Environment · Khulna", logo: "" }
       ];
       </script>
     </section>
@@ -968,6 +1086,120 @@
     };
     var ARROW = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>';
     function el(tag, cls, text){ var e = document.createElement(tag); if(cls) e.className = cls; if(text != null) e.textContent = text; return e; }
+
+
+    /* ---------- Hero photo slider ---------- */
+    (function(){
+      var hero = document.querySelector(".ctb-hero");
+      var wrap = hero && hero.querySelector(".ctb-slides");
+      var ui = hero && hero.querySelector(".ctb-slide-ui");
+      var items = (window.CTB_HERO || []).filter(function(x){ return x && x.src; });
+      if(!wrap || !items.length) return;
+      var reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+      var DUR = 6000;
+      var slides = [];            // only photos that actually loaded
+      var first = wrap.querySelector(".ctb-slide");
+      var cap = ui.querySelector(".ctb-slide-cap span");
+      var bars = ui.querySelector(".ctb-slide-bars");
+      var current = 0, timer = null, paused = false;
+
+      function addSlide(item, fig, order){
+        if(!fig){
+          fig = el("figure", "ctb-slide");
+          var img = el("img"); img.src = item.src; img.alt = item.caption || "Photo of Bangladesh"; img.decoding = "async";
+          fig.appendChild(img);
+          if(item.sample) fig.appendChild(el("span", "ctb-sample", "Sample photo"));
+          wrap.appendChild(fig);
+        }
+        var active = slides[current];
+        slides.push({ fig: fig, item: item, order: order });
+        slides.sort(function(x, y){ return x.order - y.order; });   // keep the order of the list
+        current = Math.max(0, slides.indexOf(active));
+        buildBars();
+        ui.hidden = false;
+        if(slides.length === 2) schedule();
+      }
+      function buildBars(){
+        bars.innerHTML = "";
+        slides.forEach(function(sl, i){
+          var b = el("button", "ctb-bar"); b.type = "button"; b.appendChild(el("i"));
+          b.setAttribute("aria-label", "Show photo: " + (sl.item.caption || "photo " + (i + 1)));
+          b.style.setProperty("--dur", DUR + "ms");
+          b.addEventListener("click", function(){ show(i); });
+          bars.appendChild(b);
+        });
+        refreshBars();
+      }
+      function refreshBars(){
+        bars.querySelectorAll(".ctb-bar").forEach(function(b, i){
+          b.setAttribute("aria-current", i === current ? "true" : "false");
+          b.classList.toggle("is-done", i < current);
+        });
+        bars.hidden = slides.length < 2;
+      }
+      function show(i){
+        if(!slides.length) return;
+        var next = (i + slides.length) % slides.length;
+        slides.forEach(function(s, j){ s.fig.classList.toggle("is-active", j === next); });
+        current = next;
+        cap.textContent = slides[current].item.caption || "";
+        // restart the progress bar animation
+        bars.querySelectorAll(".ctb-bar i").forEach(function(x){ x.style.animation = "none"; void x.offsetWidth; x.style.animation = ""; });
+        refreshBars();
+        schedule();
+      }
+      function schedule(){
+        clearTimeout(timer);
+        if(reduce || paused || slides.length < 2) return;
+        timer = setTimeout(function(){ show(current + 1); }, DUR);
+      }
+      function pause(on){ paused = on; hero.classList.toggle("is-paused", on); if(on) clearTimeout(timer); else schedule(); }
+
+      // First photo is already in the page; others are added once they load (missing files are skipped)
+      addSlide(items[0], first, 0);
+      cap.textContent = items[0].caption || "";
+      items.slice(1).forEach(function(item, k){
+        var probe = new Image();
+        probe.onload = function(){ addSlide(item, null, k + 1); };
+        probe.src = item.src;
+      });
+      ui.addEventListener("mouseenter", function(){ pause(true); });
+      ui.addEventListener("mouseleave", function(){ pause(false); });
+      ui.addEventListener("focusin", function(){ pause(true); });
+      ui.addEventListener("focusout", function(){ pause(false); });
+      document.addEventListener("visibilitychange", function(){ pause(document.hidden); });
+    })();
+
+    /* ---------- Partners marquee ---------- */
+    (function(){
+      var track = document.querySelector(".pt-track");
+      var partners = (window.CTB_PARTNERS || []).filter(function(x){ return x && String(x.name || "").trim(); });
+      if(!track) return;
+      if(!partners.length){ track.closest("section").hidden = true; return; }
+      if(partners.some(function(x){ return x.sample; })) document.querySelector(".ctb-sample-inline").hidden = false;
+      function initials(n){ return n.trim().split(/\s+/).filter(function(w){ return /[A-Za-z0-9]/.test(w.charAt(0)); }).map(function(w){ return w.charAt(0); }).slice(0, 2).join("").toUpperCase(); }
+      function card(p, copy){
+        var li = el("li", "pt-card");
+        if(copy) li.setAttribute("aria-hidden", "true");
+        var box = el("div", "pt-logo");
+        var mono = el("span", "pt-mono", initials(p.name));
+        if(p.logo){
+          var img = el("img"); img.src = p.logo; img.alt = copy ? "" : p.name + " logo"; img.loading = "lazy";
+          img.onerror = function(){ img.replaceWith(mono); };
+          box.appendChild(img);
+        } else { box.appendChild(mono); }
+        li.appendChild(box);
+        li.appendChild(el("span", "pt-name", p.name));
+        if(p.type) li.appendChild(el("span", "pt-type", p.type));
+        return li;
+      }
+      // Fill at least ~2 screen widths so the loop never shows a gap, then duplicate once for a seamless scroll
+      var set = partners.slice();
+      while(set.length * 240 < 1600) set = set.concat(partners);
+      set.forEach(function(p, i){ track.appendChild(card(p, i >= partners.length)); });
+      set.forEach(function(p){ track.appendChild(card(p, true)); });
+      track.style.setProperty("--pt-dur", Math.max(20, set.length * 5) + "s");
+    })();
 
     var list = (window.CTB_PROJECTS || []).filter(function(p){ return p && p.title && PROG[p.programme]; });
     var grid = document.querySelector(".ctb-grid");
