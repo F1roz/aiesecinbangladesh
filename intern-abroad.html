@@ -53,6 +53,150 @@
   }
   </script>
   
+  <style id="featured-styles">
+  /* ===== Featured projects (boarding passes) + EP stories ===== */
+  /* [hidden] must win over display:flex/grid set below */
+  [data-featured][hidden], [data-featured] [hidden], [data-stories][hidden], [data-stories] [hidden]{ display:none !important; }
+  .opp-section{ --acc: var(--blue); position:relative; background: var(--ink); color:#fff; overflow:hidden; isolation:isolate; }
+  .opp-section::before{ content:""; position:absolute; inset:0; z-index:-1;
+    background:
+      radial-gradient(600px 320px at 92% 0%, color-mix(in srgb, var(--acc) 38%, transparent), transparent 70%),
+      radial-gradient(circle at 1px 1px, rgba(255,255,255,.07) 1px, transparent 1.5px) 0 0 / 22px 22px; }
+  .opp-section .section-head h2{ color:#fff; }
+  .opp-section .section-head p{ color: rgba(255,255,255,.72); }
+  .opp-section .eyebrow{ color: var(--acc); }
+  .opp-section .eyebrow::before{ background: var(--acc); }
+  .opp-headrow{ display:flex; justify-content:space-between; align-items:flex-end; gap:24px; flex-wrap:wrap; margin-bottom:28px; }
+  .opp-headrow .section-head{ margin-bottom:0; }
+  .opp-all{ color:#fff; font-weight:600; font-size:.92rem; display:inline-flex; align-items:center; gap:8px; padding:10px 0; border-bottom:1.5px solid rgba(255,255,255,.3); transition: border-color var(--fast); white-space:nowrap; }
+  .opp-all:hover{ border-color: var(--acc); }
+  @media (max-width: 480px){ .opp-all{ white-space:normal; } }
+
+  .opp-filters{ display:flex; gap:8px; margin-bottom:26px; overflow-x:auto; scrollbar-width:none; padding-bottom:2px; }
+  .opp-filters::-webkit-scrollbar{ display:none; }
+  .opp-chip{ flex:none; font: 600 .84rem/1 var(--font-body); color: rgba(255,255,255,.8); background: rgba(255,255,255,.06); border:1px solid rgba(255,255,255,.14); border-radius:100px; padding:10px 16px; cursor:pointer; transition: background var(--fast), color var(--fast), border-color var(--fast); }
+  .opp-chip:hover{ border-color: rgba(255,255,255,.4); color:#fff; }
+  .opp-chip[aria-pressed="true"]{ background: var(--acc); border-color: var(--acc); color:#fff; }
+  .opp-chip .n{ opacity:.65; margin-left:4px; font-weight:500; }
+  .opp-chip:focus-visible, .opp-apply:focus-visible, .opp-view:focus-visible, .story-btn:focus-visible, .story-dot:focus-visible{ outline:2px solid #fff; outline-offset:3px; }
+
+  .opp-grid{ display:grid; grid-template-columns: repeat(3, minmax(0,1fr)); gap:22px; }
+  @media (max-width: 1080px){ .opp-grid{ grid-template-columns: repeat(2, minmax(0,1fr)); } }
+
+  .opp-card{ display:flex; flex-direction:column; background:#fff; color: var(--ink); border-radius:18px; position:relative; box-shadow: 0 1px 0 rgba(255,255,255,.08), 0 18px 40px -24px rgba(0,0,0,.6); transition: transform var(--fast) var(--ease), box-shadow var(--fast) var(--ease); animation: opp-in .5s var(--ease) both; animation-delay: calc(var(--i, 0) * 60ms); }
+  .opp-card:hover{ transform: translateY(-4px); box-shadow: 0 28px 50px -24px rgba(0,0,0,.75); }
+  @keyframes opp-in{ from{ opacity:0; transform: translateY(14px); } to{ opacity:1; transform:none; } }
+
+  .opp-route{ display:grid; grid-template-columns:auto 1fr auto; align-items:center; gap:12px; padding:18px 20px 16px; background: color-mix(in srgb, var(--acc) 9%, #fff); border-radius:18px 18px 0 0; border-bottom:1px solid color-mix(in srgb, var(--acc) 18%, #fff); }
+  .opp-port b{ display:block; font: 700 1.55rem/1 var(--font-display); letter-spacing:.02em; }
+  .opp-port small{ display:block; margin-top:5px; font-size:.68rem; font-weight:600; letter-spacing:.08em; text-transform:uppercase; color: var(--ink-soft); white-space:nowrap; overflow:hidden; text-overflow:ellipsis; max-width:12ch; }
+  .opp-port--to{ text-align:right; }
+  .opp-port--to b{ color: var(--acc); }
+  .opp-port--to small{ margin-left:auto; }
+  .opp-path{ position:relative; height:2px; background: repeating-linear-gradient(90deg, color-mix(in srgb, var(--acc) 55%, #fff) 0 6px, transparent 6px 11px); }
+  .opp-path svg{ position:absolute; left:50%; top:50%; width:22px; height:22px; transform: translate(-50%,-50%); color: var(--acc); background: color-mix(in srgb, var(--acc) 9%, #fff); padding:2px; border-radius:50%; transition: left .6s var(--ease); }
+  .opp-card:hover .opp-path svg{ left:62%; }
+
+  .opp-body{ padding:18px 20px 20px; display:flex; flex-direction:column; gap:8px; flex:1; }
+  .opp-country{ font-size:.7rem; font-weight:700; letter-spacing:.12em; text-transform:uppercase; color: var(--acc); }
+  .opp-body h3{ font-size:1.12rem; line-height:1.3; display:-webkit-box; -webkit-line-clamp:2; -webkit-box-orient:vertical; overflow:hidden; }
+  .opp-org{ font-size:.86rem; color: var(--ink-soft); font-weight:500; }
+  .opp-sum{ font-size:.88rem; color: var(--ink-soft); line-height:1.55; display:-webkit-box; -webkit-line-clamp:3; -webkit-box-orient:vertical; overflow:hidden; }
+  .opp-meta{ display:flex; flex-wrap:wrap; gap:6px; margin-top:auto; padding-top:8px; list-style:none; }
+  .opp-meta li{ font-size:.76rem; font-weight:600; padding:6px 10px; border-radius:100px; background: var(--grey); color: var(--ink); }
+  .opp-meta li.pay{ background: color-mix(in srgb, var(--acc) 12%, #fff); color: var(--ink); }
+
+  .opp-stub{ position:relative; display:flex; align-items:center; gap:10px; padding:14px 20px 18px; border-top:2px dashed var(--grey-line); }
+  .opp-stub::before, .opp-stub::after{ content:""; position:absolute; top:-11px; width:20px; height:20px; border-radius:50%; background: var(--ink); }
+  .opp-stub::before{ left:-10px; } .opp-stub::after{ right:-10px; }
+  .opp-apply{ flex:1; display:inline-flex; align-items:center; justify-content:center; gap:6px; text-align:center; font-weight:700; font-size:.9rem; color:#fff; background: var(--acc); border-radius:100px; padding:12px 16px; transition: filter var(--fast), transform var(--fast) var(--ease); }
+  .opp-apply:hover{ filter: brightness(.92); transform: translateY(-1px); }
+  .opp-view{ font-weight:600; font-size:.86rem; color: var(--ink); padding:12px 6px; display:inline-flex; align-items:center; gap:4px; }
+  .opp-view:hover{ color: var(--acc); }
+  .opp-view svg, .opp-apply svg{ width:14px; height:14px; flex:none; }
+  .opp-view{ white-space:nowrap; }
+  @media (max-width: 420px){ .opp-long{ display:none; } }
+  .opp-count{ margin-top:22px; font-size:.84rem; color: rgba(255,255,255,.55); }
+
+  @media (max-width: 700px){
+    .opp-grid{ display:flex; overflow-x:auto; scroll-snap-type:x mandatory; gap:14px; margin:0 -24px; padding:6px 24px 18px; scroll-padding:0 24px; scrollbar-width:none; }
+    .opp-grid::-webkit-scrollbar{ display:none; }
+    .opp-card{ flex: 0 0 84%; scroll-snap-align:start; }
+    .opp-card:hover{ transform:none; }
+    .opp-count::after{ content:" · swipe to see more →"; }
+  }
+
+  /* EP stories */
+  .stories-section{ --acc: var(--blue); background:#fff; }
+  .stories-section .eyebrow{ color: var(--acc); }
+  .stories-section .eyebrow::before{ background: var(--acc); }
+  .stories{ position:relative; }
+  .stories-track{ display:flex; overflow-x:auto; scroll-snap-type:x mandatory; scroll-behavior:smooth; scrollbar-width:none; border-radius: var(--radius-lg); }
+  .stories-track::-webkit-scrollbar{ display:none; }
+  .story{ flex:0 0 100%; scroll-snap-align:start; display:grid; grid-template-columns: minmax(0,1fr) minmax(0,1fr); border-radius: var(--radius-lg); overflow:hidden; margin:0; min-height:460px; }
+  .story-photo{ position:relative; background: linear-gradient(140deg, var(--acc), color-mix(in srgb, var(--acc) 60%, #101820)); }
+  .story-photo img{ position:absolute; inset:0; width:100%; height:100%; object-fit:cover; object-position:50% 30%; }
+  .story-initials{ position:absolute; inset:0; display:flex; align-items:center; justify-content:center; font: 700 4.5rem/1 var(--font-display); color: rgba(255,255,255,.9); letter-spacing:.02em; }
+  .story-tag{ position:absolute; left:18px; bottom:18px; background: rgba(16,24,32,.72); color:#fff; font-size:.74rem; font-weight:700; letter-spacing:.06em; text-transform:uppercase; padding:8px 12px; border-radius:100px; backdrop-filter: blur(6px); }
+  .story-sample{ position:absolute; right:18px; top:18px; background:#FFD84D; color:#101820; font-size:.7rem; font-weight:800; letter-spacing:.08em; text-transform:uppercase; padding:6px 10px; border-radius:6px; }
+  .story-body{ background: color-mix(in srgb, var(--acc) 13%, #fff); padding:56px 56px 48px; display:flex; flex-direction:column; justify-content:center; gap:24px; }
+  .story-mark{ font: 700 5rem/.6 var(--font-display); color: var(--acc); height:34px; }
+  .story-quote{ font: 500 clamp(1.15rem, .9rem + 1vw, 1.7rem)/1.42 var(--font-display); color: var(--ink); margin:0; text-wrap: pretty; }
+  .story-who{ display:flex; flex-direction:column; gap:6px; }
+  .story-who strong{ font-size:1rem; }
+  .story-who strong small{ font-weight:400; font-size:1rem; }
+  .story-who span{ font-size:.92rem; color: color-mix(in srgb, var(--acc) 45%, var(--ink-soft)); }
+  .stories-nav{ display:flex; align-items:center; justify-content:space-between; gap:16px; margin-top:22px; }
+  .story-dots{ display:flex; gap:8px; }
+  .story-dot{ width:10px; height:10px; border-radius:100px; border:0; padding:0; background: color-mix(in srgb, var(--acc) 25%, #fff); cursor:pointer; transition: width var(--fast) var(--ease), background var(--fast); }
+  .story-dot[aria-current="true"]{ width:28px; background: var(--acc); }
+  .story-btns{ display:flex; gap:10px; }
+  .story-btn{ width:46px; height:46px; border-radius:50%; border:1.5px solid var(--grey-line); background:#fff; color: var(--ink); display:flex; align-items:center; justify-content:center; cursor:pointer; transition: border-color var(--fast), background var(--fast), color var(--fast); }
+  .story-btn:hover{ border-color: var(--acc); background: var(--acc); color:#fff; }
+  .story-btn svg{ width:18px; height:18px; }
+  @media (max-width: 820px){
+    .story{ grid-template-columns:1fr; min-height:0; }
+    .story-photo{ min-height:0; aspect-ratio: 4 / 3; }
+    .story-body{ padding:28px 24px 30px; gap:16px; }
+    .story-mark{ font-size:3.4rem; height:20px; }
+  }
+
+  /* What you'll gain + support */
+  .gain-section{ --acc: var(--blue); }
+  .gain-section .eyebrow{ color: var(--acc); }
+  .gain-section .eyebrow::before{ background: var(--acc); }
+  .gain-grid{ display:grid; grid-template-columns: repeat(4, minmax(0,1fr)); gap:20px; counter-reset: gain; }
+  .gain{ position:relative; padding:28px 24px 26px; border-radius:18px; background:#fff; border:1px solid var(--grey-line); overflow:hidden; counter-increment: gain; transition: border-color var(--fast), transform var(--fast) var(--ease); }
+  .gain:hover{ border-color: var(--acc); transform: translateY(-3px); }
+  .gain::after{ content: "0" counter(gain); position:absolute; right:14px; top:6px; font: 700 4rem/1 var(--font-display); color: color-mix(in srgb, var(--acc) 12%, #fff); pointer-events:none; }
+  .gain-icon{ width:48px; height:48px; border-radius:14px; display:flex; align-items:center; justify-content:center; background: color-mix(in srgb, var(--acc) 12%, #fff); color: var(--acc); position:relative; z-index:1; }
+  .gain-icon svg{ width:24px; height:24px; }
+  .gain h3{ font-size:1.08rem; margin-top:18px; position:relative; z-index:1; }
+  .gain p{ font-size:.9rem; color: var(--ink-soft); margin-top:8px; line-height:1.6; position:relative; z-index:1; }
+  .support{ margin-top:40px; border-radius:22px; background: var(--ink); color:#fff; padding:30px 32px; display:grid; grid-template-columns: minmax(0,1.1fr) repeat(4, minmax(0,1fr)); gap:26px; align-items:start; }
+  .support-intro h3{ color:#fff; font-size:1.25rem; }
+  .support-intro p{ color: rgba(255,255,255,.65); font-size:.88rem; margin-top:8px; }
+  .support-item{ display:flex; flex-direction:column; gap:8px; padding-left:16px; border-left:2px solid var(--acc); }
+  .support-item strong{ font-size:.95rem; }
+  .support-item span{ font-size:.84rem; color: rgba(255,255,255,.7); line-height:1.5; }
+  @media (max-width: 1080px){
+    .gain-grid{ grid-template-columns: repeat(2, minmax(0,1fr)); }
+    .support{ grid-template-columns: repeat(2, minmax(0,1fr)); }
+    .support-intro{ grid-column: 1 / -1; }
+  }
+  @media (max-width: 560px){
+    .gain-grid{ grid-template-columns: 1fr; gap:14px; }
+    .gain{ padding:22px 20px; }
+    .support{ grid-template-columns: 1fr; padding:26px 22px; gap:20px; }
+  }
+  @media (prefers-reduced-motion: reduce){ .gain{ transition:none; } }
+
+  @media (prefers-reduced-motion: reduce){
+    .opp-card{ animation:none; }
+    .opp-card, .opp-path svg, .story-dot{ transition:none; }
+    .stories-track{ scroll-behavior:auto; }
+  }
+  </style>
 </head>
 <body class="">
   <div id="page-loader" aria-hidden="true">
@@ -152,6 +296,65 @@
       </div>
     </section>
 
+    <!-- ===================== WHAT YOU'LL GAIN ===================== -->
+    <section class="section gain-section" style="--acc:var(--talent);" aria-labelledby="gain-title">
+      <div class="container">
+        <div class="section-head reveal">
+          <span class="eyebrow">Why go</span>
+          <h2 id="gain-title">How an internship abroad will help your career</h2>
+          <p>Real work, real pay, and a CV line that stands out to employers.</p>
+        </div>
+        <div class="gain-grid">
+          <article class="gain reveal"><div class="gain-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="7" width="18" height="13" rx="2"/><path d="M8 7V5a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2M3 13h18"/></svg></div><h3>International work experience</h3><p>Do a real job at a host company abroad and show employers you can deliver in a professional, cross-cultural setting.</p></article>
+          <article class="gain reveal"><div class="gain-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 20V10M10 20V4M16 20v-7M22 20H2"/></svg></div><h3>Skills employers want</h3><p>Build hard skills in your field plus communication, adaptability and problem-solving across cultures.</p></article>
+          <article class="gain reveal"><div class="gain-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="9" cy="8" r="3.2"/><path d="M3 20a6 6 0 0 1 12 0"/><circle cx="17" cy="9" r="2.4"/><path d="M15.5 14.2A5 5 0 0 1 21 19"/></svg></div><h3>A global professional network</h3><p>Work alongside colleagues and managers abroad and connect with AIESEC's alumni network worldwide.</p></article>
+          <article class="gain reveal"><div class="gain-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v4M12 17v4M3 12h4M17 12h4M6 6l2.5 2.5M15.5 15.5 18 18M6 18l2.5-2.5M15.5 8.5 18 6"/></svg></div><h3>Independence and confidence</h3><p>Manage your own life in a new country, which is the kind of growth that shows in interviews.</p></article>
+        </div>
+        <div class="support reveal">
+          <div class="support-intro"><h3>You won't be on your own</h3><p>AIESEC supports you before, during and after your exchange.</p></div>
+          <div class="support-item"><strong>Preparation before you fly</strong><span>AIESEC in Bangladesh runs pre-departure training on logistics, safety and culture.</span></div>
+          <div class="support-item"><strong>Visa and arrival help</strong><span>The host AIESEC team helps with visa paperwork, airport pickup and accommodation guidance.</span></div>
+          <div class="support-item"><strong>A local contact throughout</strong><span>You'll have a dedicated AIESEC contact in your host country for the whole experience.</span></div>
+          <div class="support-item"><strong>A clear role from day one</strong><span>Every project comes with a defined job description, so you know what you'll be doing.</span></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== FEATURED PROJECTS ===================== -->
+    <section class="section opp-section" data-featured data-programme="GTa" style="--acc:var(--talent);" aria-labelledby="featured-title">
+      <div class="container">
+        <div class="opp-headrow">
+          <div class="section-head">
+            <span class="eyebrow">Featured projects</span>
+            <h2 id="featured-title">Paid internships, open right now</h2>
+            <p>Hand-picked Global Talent roles with host companies abroad. Salaries are paid monthly by the host company.</p>
+          </div>
+          <a class="opp-all" href="https://aiesec.org/global-talent" target="_blank" rel="noopener">Browse every internship on aiesec.org <span aria-hidden="true">&#8599;</span></a>
+        </div>
+        <div class="opp-filters" role="group" aria-label="Filter projects by country"></div>
+        <div class="opp-grid"></div>
+        <p class="opp-count" aria-live="polite"></p>
+      </div>
+      <script>
+      /* ============================================================
+         EDIT YOUR FEATURED PROJECTS HERE
+         - One line per project, copied from its aiesec.org page.
+         - Only "url" is required; every other field is optional.
+         - To remove an expired project, delete its line.
+         - To add one, copy a line and change the values.
+         - Cards, country filters and the "Apply" links update by themselves.
+         ============================================================ */
+      window.AIESEC_FEATURED = [
+      { url: "https://aiesec.org/opportunity/global-talent/1338737", title: "Media & Event Coordinator Intern", org: "Luxuria Colombo (Pvt) Ltd", country: "Sri Lanka", city: "Nugegoda", duration: "Short term", focus: "Media · Events", salary: "LKR 45,000 / month", summary: "Support luxury wedding and event execution, media coverage, vendor coordination and client communication." },
+      { url: "https://aiesec.org/opportunity/global-talent/1338298", title: "Python Developer Intern (AI/ML)", org: "Brand Corridor (Pvt) Ltd", country: "Sri Lanka", city: "Nugegoda", focus: "Software · AI", salary: "LKR 60,000 / month", summary: "Help build and deploy AI-powered solutions alongside developers, data scientists and designers." },
+      { url: "https://aiesec.org/opportunity/global-talent/1337938", title: "Graphic Designer Intern", org: "Brand Corridor (Pvt) Ltd", country: "Sri Lanka", city: "Nugegoda", duration: "Mid term", focus: "Design · Marketing", salary: "LKR 60,000 / month", summary: "Design social media, web and marketing visuals while keeping the brand consistent across channels." },
+      { url: "https://aiesec.org/opportunity/global-talent/1336833", title: "AI & ML Engineering Intern", org: "Altria Consulting (Pvt) Ltd", country: "Sri Lanka", city: "Nugegoda", focus: "AI · Data", salary: "LKR 85,000 / month", summary: "Build and refine machine learning models, analyse large datasets and present insights to business stakeholders." },
+      { url: "https://aiesec.org/opportunity/global-talent/1339917", title: "UI/UX Designer Intern", org: "VirtualCity Informatics Pvt Ltd", country: "India", city: "Chandigarh", focus: "UI/UX Design", salary: "INR 12,000 / month", summary: "Design interfaces and prototypes while supporting design classes, workshops and student mentoring." },
+      { url: "https://aiesec.org/opportunity/global-talent/1339756", title: "Architectural Intern", org: "Archana Kapil Associates", country: "India", city: "Dehradun", focus: "Architecture", salary: "INR 30,000 / month", summary: "Support senior architects on commercial and residential projects with design, drafting and site work." },
+      ];
+      </script>
+    </section>
+
     <section class="section section--tight bg-offwhite">
       <div class="container">
         <div class="section-head reveal">
@@ -162,6 +365,48 @@
           <div class="timeline-step"><div class="timeline-num" style="color:var(--talent);">01</div><div><h4>Explore &amp; choose a project</h4><p>Browse live opportunities by country, cause area, or date, and shortlist projects that fit your goals.</p></div></div><div class="timeline-step"><div class="timeline-num" style="color:var(--talent);">02</div><div><h4>Apply online</h4><p>Submit your application through the AIESEC global platform — no fee to apply.</p></div></div><div class="timeline-step"><div class="timeline-num" style="color:var(--talent);">03</div><div><h4>Interview &amp; match</h4><p>Speak with the host committee, get matched to a project, and receive your acceptance.</p></div></div><div class="timeline-step"><div class="timeline-num" style="color:var(--talent);">04</div><div><h4>Pre-departure preparation</h4><p>Attend AIESEC in Bangladesh's pre-departure training covering logistics, safety, and cultural prep.</p></div></div><div class="timeline-step"><div class="timeline-num" style="color:var(--talent);">05</div><div><h4>Fly &amp; deliver impact</h4><p>Arrive on-site, complete onboarding with your host, and get to work on real deliverables.</p></div></div>
         </div>
       </div>
+    </section>
+
+    <!-- ===================== EP STORIES ===================== -->
+    <section class="section stories-section" data-stories style="--acc:var(--talent);" aria-labelledby="stories-title" aria-roledescription="carousel">
+      <div class="container">
+        <div class="section-head">
+          <span class="eyebrow">EP stories</span>
+          <h2 id="stories-title">What it's really like to intern abroad</h2>
+          <p>Students from Bangladesh who went abroad with AIESEC share what changed for them.</p>
+        </div>
+        <div class="stories">
+          <div class="stories-track"></div>
+          <div class="stories-nav">
+            <div class="story-dots"></div>
+            <div class="story-btns">
+              <button type="button" class="story-btn story-btn--prev" aria-label="Previous story"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 18 9 12l6-6"/></svg></button>
+              <button type="button" class="story-btn story-btn--next" aria-label="Next story"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18 6-6-6-6"/></svg></button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <script>
+      /* ============================================================
+         EDIT YOUR EP STORIES HERE
+         - These 6 are SAMPLES (they show a yellow "Sample" label).
+           Replace each with a real EP and DELETE "sample: true,"
+           so the label disappears.
+         - photo: upload to assets/images/eps/ and put its path here,
+           e.g. "assets/images/eps/nusrat.jpg". Landscape or square
+           photos look best. No photo? Use "" and initials show.
+         - Delete a whole line to remove an EP. Lines with an empty
+           name or quote are skipped automatically.
+         ============================================================ */
+      window.AIESEC_STORIES = [
+        { sample: true, photo: "assets/images/hero-slide-3.jpg", name: "Fahim Karim", from: "Dhaka", country: "Sri Lanka", trip: "Interned in Sri Lanka", project: "AI & ML Engineering", lc: "AIESEC in Bangladesh", quote: "My internship put me on a real client project from week one. I left with production experience, a strong reference, and the confidence to apply for jobs abroad." },
+        { sample: true, photo: "assets/images/hero-slide-1.jpg", name: "Anika Tabassum", from: "Dhaka", country: "India", trip: "Interned in India", project: "UI/UX Design", lc: "AIESEC in Bangladesh", quote: "Designing for real users in a fast-paced team taught me more than a year of classes. My portfolio finally has work I'm proud to show." },
+        { sample: true, photo: "assets/images/hero-slide-2.jpg", name: "Shahriar Kabir", from: "Dhaka", country: "Malaysia", trip: "Interned in Malaysia", project: "Business Development", lc: "AIESEC in Bangladesh", quote: "Working in a multinational team showed me how business is done across cultures. Interviewers always ask about it, and I always have a story to tell." },
+        { sample: true, photo: "assets/images/hero-slide-3.jpg", name: "Lamia Akter", from: "Dhaka", country: "Türkiye", trip: "Interned in Türkiye", project: "Marketing", lc: "AIESEC in Bangladesh", quote: "Managing campaigns in a new country and a new language was scary at first. Now I know I can walk into any office and figure it out." },
+        { sample: true, photo: "assets/images/hero-slide-1.jpg", name: "Imran Hossain", from: "Dhaka", country: "Egypt", trip: "Interned in Egypt", project: "Software Development", lc: "AIESEC in Bangladesh", quote: "Being paid to do real engineering work abroad felt unreal. The skills, the salary and the network made it the best decision of my degree." },
+        { sample: true, photo: "assets/images/hero-slide-2.jpg", name: "Tasnim Ferdous", from: "Dhaka", country: "Vietnam", trip: "Interned in Vietnam", project: "Graphic Design", lc: "AIESEC in Bangladesh", quote: "My manager trusted me with the brand's social media from day one. That trust made me grow faster than I ever had at home." },
+      ];
+      </script>
     </section>
 
     <section class="section" id="faqs-intern">
@@ -290,5 +535,165 @@
   </button>
 
   <script src="js/main.js" defer></script>
+  <!-- Featured projects + EP stories: builds the cards from the lists above. No need to edit this. -->
+  <script>
+  (function(){
+    "use strict";
+    var CODES = { "bangladesh":"DAC","vietnam":"VNM","south korea":"KOR","korea":"KOR","nepal":"NPL","philippines":"PHL","sri lanka":"LKA","indonesia":"IDN","türkiye":"TUR","turkey":"TUR","egypt":"EGY","india":"IND","malaysia":"MYS","thailand":"THA","cambodia":"KHM","china":"CHN","mainland of china":"CHN","taiwan":"TWN","hong kong":"HKG","japan":"JPN","pakistan":"PAK","morocco":"MAR","tunisia":"TUN","kenya":"KEN","ghana":"GHA","nigeria":"NGA","brazil":"BRA","colombia":"COL","peru":"PER","mexico":"MEX","argentina":"ARG","germany":"DEU","poland":"POL","italy":"ITA","spain":"ESP","portugal":"PRT","romania":"ROU","georgia":"GEO","uzbekistan":"UZB","kazakhstan":"KAZ","united arab emirates":"ARE","uae":"ARE","singapore":"SGP" };
+    var PROG = { "global-volunteer":"GV", "global-talent":"GTa", "global-teacher":"GTe" };
+    var PLANE = '<svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M21 16v-2l-8-5V3.5a1.5 1.5 0 0 0-3 0V9l-8 5v2l8-2.5V19l-2 1.5V22l3.5-1 3.5 1v-1.5L13 19v-5.5l8 2.5Z" transform="rotate(90 12 12)"/></svg>';
+    var ARROW = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9"/></svg>';
+
+    function el(tag, cls, text){ var e = document.createElement(tag); if(cls) e.className = cls; if(text != null) e.textContent = text; return e; }
+    function code(country){ var c = String(country || "").trim(); return CODES[c.toLowerCase()] || c.replace(/[^A-Za-z]/g, "").slice(0, 3).toUpperCase() || "???"; }
+    function cleanTitle(t){ return String(t || "").replace(/\s*\[[^\]]*\]\s*/g, " ").trim(); }
+
+    /* ---------- Featured projects ---------- */
+    document.querySelectorAll("[data-featured]").forEach(function(section){
+      var list = (window.AIESEC_FEATURED || []).filter(function(p){ return p && /^https?:\/\//.test(p.url || ""); });
+      if(!list.length){ section.hidden = true; return; }
+      var grid = section.querySelector(".opp-grid");
+      var filters = section.querySelector(".opp-filters");
+      var count = section.querySelector(".opp-count");
+
+      list.forEach(function(p, i){
+        var m = String(p.url).match(/opportunity\/([a-z-]+)\/(\d+)/) || [];
+        var prog = PROG[m[1]] || section.getAttribute("data-programme") || "GV";
+        var id = m[2] || "";
+        var title = cleanTitle(p.title) || "Open project";
+
+        var card = el("article", "opp-card");
+        card.style.setProperty("--i", i);
+        card.setAttribute("data-country", p.country || "");
+
+        var route = el("div", "opp-route");
+        var from = el("div", "opp-port"); from.appendChild(el("b", null, "DAC")); from.appendChild(el("small", null, "Dhaka"));
+        var path = el("div", "opp-path"); path.innerHTML = PLANE;
+        var to = el("div", "opp-port opp-port--to"); to.appendChild(el("b", null, code(p.country))); to.appendChild(el("small", null, p.city || p.country || ""));
+        route.appendChild(from); route.appendChild(path); route.appendChild(to);
+        card.appendChild(route);
+
+        var body = el("div", "opp-body");
+        if(p.country) body.appendChild(el("p", "opp-country", p.country));
+        body.appendChild(el("h3", null, title));
+        if(p.org) body.appendChild(el("p", "opp-org", p.org));
+        if(p.summary) body.appendChild(el("p", "opp-sum", p.summary));
+        var meta = el("ul", "opp-meta");
+        if(p.duration) meta.appendChild(el("li", null, p.duration));
+        if(p.focus) meta.appendChild(el("li", null, p.focus));
+        if(p.salary) meta.appendChild(el("li", "pay", p.salary));
+        if(meta.children.length) body.appendChild(meta);
+        card.appendChild(body);
+
+        var stub = el("div", "opp-stub");
+        var apply = el("a", "opp-apply"); apply.href = p.url; apply.target = "_blank"; apply.rel = "noopener";
+        apply.innerHTML = "Apply<span class=\"opp-long\">&nbsp;on aiesec.org</span> " + ARROW;
+        apply.setAttribute("aria-label", "Apply for " + title + (p.country ? " in " + p.country : "") + " on aiesec.org (opens in a new tab)");
+        var view = el("a", "opp-view", "Need help?");
+        view.href = "apply.html?programme=" + prog + "&utm_source=website&utm_medium=featured-project&utm_campaign=" + encodeURIComponent((prog + "-" + id + " " + title).trim());
+        view.setAttribute("aria-label", "Get help from our team with " + title);
+        stub.appendChild(apply); stub.appendChild(view);
+        card.appendChild(stub);
+        grid.appendChild(card);
+      });
+
+      function show(country){
+        var n = 0;
+        grid.querySelectorAll(".opp-card").forEach(function(c){
+          var on = !country || c.getAttribute("data-country") === country;
+          c.hidden = !on; if(on) n++;
+        });
+        if(count) count.textContent = n + (n === 1 ? " project" : " projects") + (country ? " in " + country : "");
+        grid.scrollLeft = 0;
+      }
+
+      // Country filter chips — built automatically from the list
+      var countries = [];
+      list.forEach(function(p){ if(p.country && countries.indexOf(p.country) === -1) countries.push(p.country); });
+      if(filters && countries.length > 1){
+        var chips = [];
+        function chip(label, value, n){
+          var b = el("button", "opp-chip", label); b.type = "button";
+          var s = el("span", "n", String(n)); b.appendChild(s);
+          b.setAttribute("aria-pressed", value ? "false" : "true");
+          b.addEventListener("click", function(){
+            chips.forEach(function(c){ c.setAttribute("aria-pressed", "false"); });
+            b.setAttribute("aria-pressed", "true"); show(value);
+          });
+          chips.push(b); filters.appendChild(b);
+        }
+        chip("All", "", list.length);
+        countries.forEach(function(c){ chip(c, c, list.filter(function(p){ return p.country === c; }).length); });
+      } else if(filters){ filters.hidden = true; }
+      show("");
+    });
+
+    /* ---------- EP stories slider ---------- */
+    document.querySelectorAll("[data-stories]").forEach(function(section){
+      var list = (window.AIESEC_STORIES || []).filter(function(s){ return s && String(s.name || "").trim() && String(s.quote || "").trim(); });
+      // Preview: add ?preview=stories to the page address to see the layout before real stories are added
+      if(!list.length && /[?&]preview=stories\b/.test(location.search)){
+        list = [1,2,3].map(function(n){ return { name: "EP name " + n, country: "Host country", trip: "Programme & country", project: "Project name", lc: "AIESEC in Dhaka …", quote: "PREVIEW — this is where your EP's own words go: two or three sentences about what the experience was like and what changed for them. This preview only appears when ?preview=stories is in the address." }; });
+      }
+      if(!list.length){ section.hidden = true; return; }
+      var track = section.querySelector(".stories-track");
+      var dots = section.querySelector(".story-dots");
+      var nav = section.querySelector(".stories-nav");
+
+      list.forEach(function(s, i){
+        var fig = el("figure", "story");
+        fig.setAttribute("role", "group");
+        fig.setAttribute("aria-roledescription", "slide");
+        fig.setAttribute("aria-label", (i + 1) + " of " + list.length);
+        var ph = el("div", "story-photo");
+        var initials = el("span", "story-initials", String(s.name).trim().split(/\s+/).map(function(w){ return w.charAt(0); }).slice(0, 2).join("").toUpperCase());
+        ph.appendChild(initials);
+        if(s.photo){
+          var img = el("img"); img.src = s.photo; img.alt = s.name; img.loading = "lazy";
+          img.onerror = function(){ img.remove(); };
+          ph.appendChild(img);
+        }
+        if(s.country) ph.appendChild(el("span", "story-tag", s.country));
+        if(s.sample) ph.appendChild(el("span", "story-sample", "Sample"));
+        fig.appendChild(ph);
+
+        var body = el("div", "story-body");
+        body.appendChild(el("div", "story-mark", "“"));
+        body.appendChild(el("blockquote", "story-quote", s.quote));
+        var who = el("figcaption", "story-who");
+        var nm = el("strong", null, s.name);
+        if(s.from){ nm.appendChild(el("small", null, ", " + s.from)); }
+        who.appendChild(nm);
+        var line = [s.trip, s.project].filter(Boolean).join(" · ");
+        if(line) who.appendChild(el("span", null, line));
+        if(s.lc) who.appendChild(el("span", null, s.lc));
+        body.appendChild(who);
+        fig.appendChild(body);
+        track.appendChild(fig);
+
+        var d = el("button", "story-dot"); d.type = "button";
+        d.setAttribute("aria-label", "Show story " + (i + 1) + ": " + s.name);
+        d.addEventListener("click", function(){ go(i); restart(); });
+        dots.appendChild(d);
+      });
+
+      if(list.length < 2){ nav.hidden = true; }
+      var current = 0, timer = null;
+      var reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+      function go(i){ current = (i + list.length) % list.length; track.scrollTo({ left: current * track.clientWidth, behavior: reduce ? "auto" : "smooth" }); mark(); }
+      function mark(){ dots.querySelectorAll(".story-dot").forEach(function(d, j){ d.setAttribute("aria-current", j === current ? "true" : "false"); }); }
+      function restart(){ if(timer) clearInterval(timer); if(!reduce && list.length > 1) timer = setInterval(function(){ go(current + 1); }, 7000); }
+      section.querySelector(".story-btn--prev").addEventListener("click", function(){ go(current - 1); restart(); });
+      section.querySelector(".story-btn--next").addEventListener("click", function(){ go(current + 1); restart(); });
+      var t; track.addEventListener("scroll", function(){ clearTimeout(t); t = setTimeout(function(){ var i = Math.round(track.scrollLeft / track.clientWidth); if(i !== current){ current = i; mark(); } }, 80); }, { passive:true });
+      // Pause while someone is reading or using the slider
+      ["mouseenter","focusin","touchstart"].forEach(function(ev){ section.addEventListener(ev, function(){ if(timer) clearInterval(timer); timer = null; }, { passive:true }); });
+      section.addEventListener("mouseleave", restart);
+      window.addEventListener("resize", function(){ track.scrollLeft = current * track.clientWidth; });
+      mark(); restart();
+    });
+  })();
+  </script>
+
 </body>
 </html>
