@@ -11,7 +11,7 @@ window.AIESEC_BD_CONFIG = {
   /* 1) Google Apps Script web-app URL (ends in /exec).
         Both forms send a copy of every submission here, and the script
         writes it into your Google Sheet. */
-  SHEET_ENDPOINT: "PASTE_YOUR_GOOGLE_APPS_SCRIPT_URL_HERE",
+  SHEET_ENDPOINT: "https://script.google.com/a/macros/aiesec.net/s/AKfycbzniy8HIZLuUL4sTkitGSifVEHQmS4kowaydlmuQGYR8jp9VwA5Ro5uJ3OV-ySrML0Fsw/exec",
 
   /* 2) Your Local Committees and their EXPA committee IDs.
         How to find an ID: open the LC in EXPA (expa.aiesec.org) and look
@@ -19,8 +19,8 @@ window.AIESEC_BD_CONFIG = {
         While an ID is 0, sign-ups still reach the Google Sheet but are NOT
         sent to EXPA for that LC — so you can go live before you have them. */
   LCS: [
-    { name: "AIESEC in Dhaka North",        id: 0 },
-    { name: "AIESEC in Dhaka North East",   id: 0 },
+    { name: "AIESEC in Dhaka North",        id: 2488 },
+    { name: "AIESEC in Dhaka North East",   id: 6736 },
     { name: "AIESEC in Dhaka NorthWestern", id: 0 },
     { name: "AIESEC in Dhaka South",        id: 0 }
   ],
