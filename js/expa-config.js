@@ -11,7 +11,7 @@ window.AIESEC_BD_CONFIG = {
   /* 1) Google Apps Script web-app URL (ends in /exec).
         Both forms send a copy of every submission here, and the script
         writes it into your Google Sheet. */
-  SHEET_ENDPOINT: "https://script.google.com/a/macros/aiesec.net/s/AKfycbzniy8HIZLuUL4sTkitGSifVEHQmS4kowaydlmuQGYR8jp9VwA5Ro5uJ3OV-ySrML0Fsw/exec",
+  SHEET_ENDPOINT: "https://script.google.com/macros/s/AKfycbx5WeZnGkmkcsUYHPAKgnV36j6vxAshYV1BjRvR48jXOZEN6CfU3tAczy0wcBrRXRtXbQ/exec",
 
   /* 2) Your Local Committees and their EXPA committee IDs.
         How to find an ID: open the LC in EXPA (expa.aiesec.org) and look
