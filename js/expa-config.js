@@ -21,8 +21,8 @@ window.AIESEC_BD_CONFIG = {
   LCS: [
     { name: "AIESEC in Dhaka North",        id: 2488 },
     { name: "AIESEC in Dhaka North East",   id: 6736 },
-    { name: "AIESEC in Dhaka NorthWestern", id: 0 },
-    { name: "AIESEC in Dhaka South",        id: 0 }
+    { name: "AIESEC in Dhaka Central", id: 6738 },
+//     { name: "AIESEC in Dhaka South",        id: 0 }
   ],
 
   /* 3) Where people who choose "Not sure / no preference" are sent.
