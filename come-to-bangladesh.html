@@ -1,0 +1,1069 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Come to Bangladesh | Volunteer, Intern or Teach | AIESEC in Bangladesh</title>
+  <meta name="description" content="Discover Bangladesh with AIESEC: 6-week volunteer projects, paid internships and teaching roles with local partners, with airport pickup, accommodation support and a local buddy.">
+  <link rel="canonical" href="https://aiesec-bangladesh.org/come-to-bangladesh.html">
+  <meta name="robots" content="index, follow">
+  <meta name="theme-color" content="#037EF3">
+  <link rel="icon" href="assets/images/favicon-32.png" type="image/png">
+  <link rel="apple-touch-icon" href="assets/images/favicon.png">
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Come to Bangladesh | AIESEC in Bangladesh">
+  <meta property="og:description" content="Discover Bangladesh with AIESEC: 6-week volunteer projects, paid internships and teaching roles with local partners, with airport pickup, accommodation support and a local buddy.">
+  <meta property="og:url" content="https://aiesec-bangladesh.org/come-to-bangladesh.html">
+  <meta property="og:image" content="https://aiesec-bangladesh.org/assets/images/hero-slide-2.jpg">
+  <meta property="og:site_name" content="AIESEC in Bangladesh">
+  <meta property="og:locale" content="en_US">
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Come to Bangladesh | AIESEC in Bangladesh">
+  <meta name="twitter:description" content="Discover Bangladesh with AIESEC: 6-week volunteer projects, paid internships and teaching roles with local partners, with airport pickup, accommodation support and a local buddy.">
+  <meta name="twitter:image" content="https://aiesec-bangladesh.org/assets/images/aiesec-logo-primary.png">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&amp;family=Inter:wght@400;500;600;700;800&amp;family=Noto+Sans+Bengali:wght@600;700&amp;display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "AIESEC in Bangladesh",
+    "alternateName": "AIESEC Bangladesh",
+    "url": "https://aiesec-bangladesh.org/",
+    "logo": "https://aiesec-bangladesh.org/assets/images/aiesec-logo-primary.png",
+    "foundingDate": "1997",
+    "sameAs": [
+      "https://www.facebook.com/aiesecbd",
+      "https://www.linkedin.com/company/aiesecbd/posts/?feedView=all",
+      "https://www.instagram.com/aiesecinbangladesh/"
+    ],
+    "email": "aiesec.bangladesh@aiesec.net",
+    "parentOrganization": {
+      "@type": "Organization",
+      "name": "AIESEC International"
+    }
+  }
+  </script>
+  
+  <style id="featured-styles">
+  /* ===== Featured projects (boarding passes) + EP stories ===== */
+  /* [hidden] must win over display:flex/grid set below */
+  [data-featured][hidden], [data-featured] [hidden], [data-stories][hidden], [data-stories] [hidden]{ display:none !important; }
+  .opp-section{ --acc: var(--blue); position:relative; background: var(--ink); color:#fff; overflow:hidden; isolation:isolate; }
+  .opp-section::before{ content:""; position:absolute; inset:0; z-index:-1;
+    background:
+      radial-gradient(600px 320px at 92% 0%, color-mix(in srgb, var(--acc) 38%, transparent), transparent 70%),
+      radial-gradient(circle at 1px 1px, rgba(255,255,255,.07) 1px, transparent 1.5px) 0 0 / 22px 22px; }
+  .opp-section .section-head h2{ color:#fff; }
+  .opp-section .section-head p{ color: rgba(255,255,255,.72); }
+  .opp-section .eyebrow{ color: var(--acc); }
+  .opp-section .eyebrow::before{ background: var(--acc); }
+  .opp-headrow{ display:flex; justify-content:space-between; align-items:flex-end; gap:24px; flex-wrap:wrap; margin-bottom:28px; }
+  .opp-headrow .section-head{ margin-bottom:0; }
+  .opp-all{ color:#fff; font-weight:600; font-size:.92rem; display:inline-flex; align-items:center; gap:8px; padding:10px 0; border-bottom:1.5px solid rgba(255,255,255,.3); transition: border-color var(--fast); white-space:nowrap; }
+  .opp-all:hover{ border-color: var(--acc); }
+  @media (max-width: 480px){ .opp-all{ white-space:normal; } }
+
+  .opp-filters{ display:flex; gap:8px; margin-bottom:26px; overflow-x:auto; scrollbar-width:none; padding-bottom:2px; }
+  .opp-filters::-webkit-scrollbar{ display:none; }
+  .opp-chip{ flex:none; font: 600 .84rem/1 var(--font-body); color: rgba(255,255,255,.8); background: rgba(255,255,255,.06); border:1px solid rgba(255,255,255,.14); border-radius:100px; padding:10px 16px; cursor:pointer; transition: background var(--fast), color var(--fast), border-color var(--fast); }
+  .opp-chip:hover{ border-color: rgba(255,255,255,.4); color:#fff; }
+  .opp-chip[aria-pressed="true"]{ background: var(--acc); border-color: var(--acc); color:#fff; }
+  .opp-chip .n{ opacity:.65; margin-left:4px; font-weight:500; }
+  .opp-chip:focus-visible, .opp-apply:focus-visible, .opp-view:focus-visible, .story-btn:focus-visible, .story-dot:focus-visible{ outline:2px solid #fff; outline-offset:3px; }
+
+  .opp-grid{ display:grid; grid-template-columns: repeat(3, minmax(0,1fr)); gap:22px; }
+  @media (max-width: 1080px){ .opp-grid{ grid-template-columns: repeat(2, minmax(0,1fr)); } }
+
+  .opp-card{ display:flex; flex-direction:column; background:#fff; color: var(--ink); border-radius:18px; position:relative; box-shadow: 0 1px 0 rgba(255,255,255,.08), 0 18px 40px -24px rgba(0,0,0,.6); transition: transform var(--fast) var(--ease), box-shadow var(--fast) var(--ease); animation: opp-in .5s var(--ease) both; animation-delay: calc(var(--i, 0) * 60ms); }
+  .opp-card:hover{ transform: translateY(-4px); box-shadow: 0 28px 50px -24px rgba(0,0,0,.75); }
+  @keyframes opp-in{ from{ opacity:0; transform: translateY(14px); } to{ opacity:1; transform:none; } }
+
+  .opp-route{ display:grid; grid-template-columns:auto 1fr auto; align-items:center; gap:12px; padding:18px 20px 16px; background: color-mix(in srgb, var(--acc) 9%, #fff); border-radius:18px 18px 0 0; border-bottom:1px solid color-mix(in srgb, var(--acc) 18%, #fff); }
+  .opp-port b{ display:block; font: 700 1.55rem/1 var(--font-display); letter-spacing:.02em; }
+  .opp-port small{ display:block; margin-top:5px; font-size:.68rem; font-weight:600; letter-spacing:.08em; text-transform:uppercase; color: var(--ink-soft); white-space:nowrap; overflow:hidden; text-overflow:ellipsis; max-width:12ch; }
+  .opp-port--to{ text-align:right; }
+  .opp-port--to b{ color: var(--acc); }
+  .opp-port--to small{ margin-left:auto; }
+  .opp-path{ position:relative; height:2px; background: repeating-linear-gradient(90deg, color-mix(in srgb, var(--acc) 55%, #fff) 0 6px, transparent 6px 11px); }
+  .opp-path svg{ position:absolute; left:50%; top:50%; width:22px; height:22px; transform: translate(-50%,-50%); color: var(--acc); background: color-mix(in srgb, var(--acc) 9%, #fff); padding:2px; border-radius:50%; transition: left .6s var(--ease); }
+  .opp-card:hover .opp-path svg{ left:62%; }
+
+  .opp-body{ padding:18px 20px 20px; display:flex; flex-direction:column; gap:8px; flex:1; }
+  .opp-country{ font-size:.7rem; font-weight:700; letter-spacing:.12em; text-transform:uppercase; color: var(--acc); }
+  .opp-body h3{ font-size:1.12rem; line-height:1.3; display:-webkit-box; -webkit-line-clamp:2; -webkit-box-orient:vertical; overflow:hidden; }
+  .opp-org{ font-size:.86rem; color: var(--ink-soft); font-weight:500; }
+  .opp-sum{ font-size:.88rem; color: var(--ink-soft); line-height:1.55; display:-webkit-box; -webkit-line-clamp:3; -webkit-box-orient:vertical; overflow:hidden; }
+  .opp-meta{ display:flex; flex-wrap:wrap; gap:6px; margin-top:auto; padding-top:8px; list-style:none; }
+  .opp-meta li{ font-size:.76rem; font-weight:600; padding:6px 10px; border-radius:100px; background: var(--grey); color: var(--ink); }
+  .opp-meta li.pay{ background: color-mix(in srgb, var(--acc) 12%, #fff); color: var(--ink); }
+
+  .opp-stub{ position:relative; display:flex; align-items:center; gap:10px; padding:14px 20px 18px; border-top:2px dashed var(--grey-line); }
+  .opp-stub::before, .opp-stub::after{ content:""; position:absolute; top:-11px; width:20px; height:20px; border-radius:50%; background: var(--ink); }
+  .opp-stub::before{ left:-10px; } .opp-stub::after{ right:-10px; }
+  .opp-apply{ flex:1; display:inline-flex; align-items:center; justify-content:center; gap:6px; text-align:center; font-weight:700; font-size:.9rem; color:#fff; background: var(--acc); border-radius:100px; padding:12px 16px; transition: filter var(--fast), transform var(--fast) var(--ease); }
+  .opp-apply:hover{ filter: brightness(.92); transform: translateY(-1px); }
+  .opp-view{ font-weight:600; font-size:.86rem; color: var(--ink); padding:12px 6px; display:inline-flex; align-items:center; gap:4px; }
+  .opp-view:hover{ color: var(--acc); }
+  .opp-view svg, .opp-apply svg{ width:14px; height:14px; flex:none; }
+  .opp-view{ white-space:nowrap; }
+  @media (max-width: 420px){ .opp-long{ display:none; } }
+  .opp-count{ margin-top:22px; font-size:.84rem; color: rgba(255,255,255,.55); }
+
+  @media (max-width: 700px){
+    .opp-grid{ display:flex; overflow-x:auto; scroll-snap-type:x mandatory; gap:14px; margin:0 -24px; padding:6px 24px 18px; scroll-padding:0 24px; scrollbar-width:none; }
+    .opp-grid::-webkit-scrollbar{ display:none; }
+    .opp-card{ flex: 0 0 84%; scroll-snap-align:start; }
+    .opp-card:hover{ transform:none; }
+    .opp-count::after{ content:" · swipe to see more →"; }
+  }
+
+  /* EP stories */
+  .stories-section{ --acc: var(--blue); background:#fff; }
+  .stories-section .eyebrow{ color: var(--acc); }
+  .stories-section .eyebrow::before{ background: var(--acc); }
+  .stories{ position:relative; }
+  .stories-track{ display:flex; overflow-x:auto; scroll-snap-type:x mandatory; scroll-behavior:smooth; scrollbar-width:none; border-radius: var(--radius-lg); }
+  .stories-track::-webkit-scrollbar{ display:none; }
+  .story{ flex:0 0 100%; scroll-snap-align:start; display:grid; grid-template-columns: minmax(0,1fr) minmax(0,1fr); border-radius: var(--radius-lg); overflow:hidden; margin:0; min-height:460px; }
+  .story-photo{ position:relative; background: linear-gradient(140deg, var(--acc), color-mix(in srgb, var(--acc) 60%, #101820)); }
+  .story-photo img{ position:absolute; inset:0; width:100%; height:100%; object-fit:cover; object-position:50% 30%; }
+  .story-initials{ position:absolute; inset:0; display:flex; align-items:center; justify-content:center; font: 700 4.5rem/1 var(--font-display); color: rgba(255,255,255,.9); letter-spacing:.02em; }
+  .story-tag{ position:absolute; left:18px; bottom:18px; background: rgba(16,24,32,.72); color:#fff; font-size:.74rem; font-weight:700; letter-spacing:.06em; text-transform:uppercase; padding:8px 12px; border-radius:100px; backdrop-filter: blur(6px); }
+  .story-sample{ position:absolute; right:18px; top:18px; background:#FFD84D; color:#101820; font-size:.7rem; font-weight:800; letter-spacing:.08em; text-transform:uppercase; padding:6px 10px; border-radius:6px; }
+  .story-body{ background: color-mix(in srgb, var(--acc) 13%, #fff); padding:56px 56px 48px; display:flex; flex-direction:column; justify-content:center; gap:24px; }
+  .story-mark{ font: 700 5rem/.6 var(--font-display); color: var(--acc); height:34px; }
+  .story-quote{ font: 500 clamp(1.15rem, .9rem + 1vw, 1.7rem)/1.42 var(--font-display); color: var(--ink); margin:0; text-wrap: pretty; }
+  .story-who{ display:flex; flex-direction:column; gap:6px; }
+  .story-who strong{ font-size:1rem; }
+  .story-who strong small{ font-weight:400; font-size:1rem; }
+  .story-who span{ font-size:.92rem; color: color-mix(in srgb, var(--acc) 45%, var(--ink-soft)); }
+  .stories-nav{ display:flex; align-items:center; justify-content:space-between; gap:16px; margin-top:22px; }
+  .story-dots{ display:flex; gap:8px; }
+  .story-dot{ width:10px; height:10px; border-radius:100px; border:0; padding:0; background: color-mix(in srgb, var(--acc) 25%, #fff); cursor:pointer; transition: width var(--fast) var(--ease), background var(--fast); }
+  .story-dot[aria-current="true"]{ width:28px; background: var(--acc); }
+  .story-btns{ display:flex; gap:10px; }
+  .story-btn{ width:46px; height:46px; border-radius:50%; border:1.5px solid var(--grey-line); background:#fff; color: var(--ink); display:flex; align-items:center; justify-content:center; cursor:pointer; transition: border-color var(--fast), background var(--fast), color var(--fast); }
+  .story-btn:hover{ border-color: var(--acc); background: var(--acc); color:#fff; }
+  .story-btn svg{ width:18px; height:18px; }
+  @media (max-width: 820px){
+    .story{ grid-template-columns:1fr; min-height:0; }
+    .story-photo{ min-height:0; aspect-ratio: 4 / 3; }
+    .story-body{ padding:28px 24px 30px; gap:16px; }
+    .story-mark{ font-size:3.4rem; height:20px; }
+  }
+
+  /* What you'll gain + support */
+  .gain-section{ --acc: var(--blue); }
+  .gain-section .eyebrow{ color: var(--acc); }
+  .gain-section .eyebrow::before{ background: var(--acc); }
+  .gain-grid{ display:grid; grid-template-columns: repeat(4, minmax(0,1fr)); gap:20px; counter-reset: gain; }
+  .gain{ position:relative; padding:28px 24px 26px; border-radius:18px; background:#fff; border:1px solid var(--grey-line); overflow:hidden; counter-increment: gain; transition: border-color var(--fast), transform var(--fast) var(--ease); }
+  .gain:hover{ border-color: var(--acc); transform: translateY(-3px); }
+  .gain::after{ content: "0" counter(gain); position:absolute; right:14px; top:6px; font: 700 4rem/1 var(--font-display); color: color-mix(in srgb, var(--acc) 12%, #fff); pointer-events:none; }
+  .gain-icon{ width:48px; height:48px; border-radius:14px; display:flex; align-items:center; justify-content:center; background: color-mix(in srgb, var(--acc) 12%, #fff); color: var(--acc); position:relative; z-index:1; }
+  .gain-icon svg{ width:24px; height:24px; }
+  .gain h3{ font-size:1.08rem; margin-top:18px; position:relative; z-index:1; }
+  .gain p{ font-size:.9rem; color: var(--ink-soft); margin-top:8px; line-height:1.6; position:relative; z-index:1; }
+  .support{ margin-top:40px; border-radius:22px; background: var(--ink); color:#fff; padding:30px 32px; display:grid; grid-template-columns: minmax(0,1.1fr) repeat(4, minmax(0,1fr)); gap:26px; align-items:start; }
+  .support-intro h3{ color:#fff; font-size:1.25rem; }
+  .support-intro p{ color: rgba(255,255,255,.65); font-size:.88rem; margin-top:8px; }
+  .support-item{ display:flex; flex-direction:column; gap:8px; padding-left:16px; border-left:2px solid var(--acc); }
+  .support-item strong{ font-size:.95rem; }
+  .support-item span{ font-size:.84rem; color: rgba(255,255,255,.7); line-height:1.5; }
+  @media (max-width: 1080px){
+    .gain-grid{ grid-template-columns: repeat(2, minmax(0,1fr)); }
+    .support{ grid-template-columns: repeat(2, minmax(0,1fr)); }
+    .support-intro{ grid-column: 1 / -1; }
+  }
+  @media (max-width: 560px){
+    .gain-grid{ grid-template-columns: 1fr; gap:14px; }
+    .gain{ padding:22px 20px; }
+    .support{ grid-template-columns: 1fr; padding:26px 22px; gap:20px; }
+  }
+  @media (prefers-reduced-motion: reduce){ .gain{ transition:none; } }
+
+  @media (prefers-reduced-motion: reduce){
+    .opp-card{ animation:none; }
+    .opp-card, .opp-path svg, .story-dot{ transition:none; }
+    .stories-track{ scroll-behavior:auto; }
+  }
+  </style>
+  <style id="ctb-styles">
+  /* ===== Come to Bangladesh ===== */
+  :root{ --bd-green:#006A4E; --bd-red:#F42A41; }
+  [lang="bn"]{ font-family: "Noto Sans Bengali", var(--font-body); }
+  .ctb-sample{ position:absolute; right:14px; top:14px; z-index:2; background:#FFD84D; color:#101820; font-size:.68rem; font-weight:800; letter-spacing:.08em; text-transform:uppercase; padding:5px 9px; border-radius:6px; }
+
+  /* Hero */
+  .ctb-hero{ position:relative; min-height: min(92vh, 820px); display:flex; align-items:flex-end; color:#fff; overflow:hidden; isolation:isolate; padding: 140px 0 56px; }
+  .ctb-hero-img{ position:absolute; inset:0; width:100%; height:100%; object-fit:cover; z-index:-2; }
+  .ctb-hero::before{ content:""; position:absolute; inset:0; z-index:-1; background: linear-gradient(90deg, rgba(8,14,20,.78) 0%, rgba(8,14,20,.5) 45%, rgba(8,14,20,0) 75%), linear-gradient(180deg, rgba(10,16,24,.3) 0%, rgba(10,16,24,.15) 40%, rgba(0,50,36,.85) 100%); }
+  @media (max-width: 720px){ .ctb-hero::before{ background: linear-gradient(180deg, rgba(8,14,20,.55) 0%, rgba(8,14,20,.6) 50%, rgba(0,50,36,.92) 100%); } }
+  .ctb-hero .breadcrumb, .ctb-hero .breadcrumb a{ color: rgba(255,255,255,.8); }
+  .ctb-kicker{ margin-top:18px; display:inline-flex; gap:10px; align-items:center; font-weight:600; letter-spacing:.04em; font-size:.95rem; }
+  .ctb-kicker::before{ content:""; width:12px; height:12px; border-radius:50%; background: var(--bd-red); box-shadow: 0 0 0 4px var(--bd-green); }
+  .ctb-hero h1{ font-size: clamp(2.6rem, 1.6rem + 5vw, 5.4rem); line-height:1; margin-top:14px; letter-spacing:-.02em; max-width: 12ch; text-shadow: 0 6px 30px rgba(0,0,0,.35); }
+  .ctb-lede{ margin-top:18px; max-width: 54ch; font-size: var(--step-1); color: rgba(255,255,255,.92); }
+  .ctb-hero-cta{ display:flex; gap:12px; flex-wrap:wrap; margin-top:28px; }
+  .ctb-progs{ list-style:none; display:grid; grid-template-columns: repeat(3, minmax(0,1fr)); gap:12px; margin-top:44px; max-width: 900px; }
+  .ctb-progs li{ padding:14px 16px; border-radius:14px; background: rgba(255,255,255,.1); border:1px solid rgba(255,255,255,.2); backdrop-filter: blur(6px); border-top:3px solid var(--c); }
+  .ctb-progs b{ display:block; font-size:.98rem; }
+  .ctb-progs span{ display:block; font-size:.82rem; color: rgba(255,255,255,.78); margin-top:3px; }
+  @media (max-width: 720px){ .ctb-progs{ grid-template-columns:1fr; } .ctb-hero{ padding-top:120px; } }
+
+  /* Why */
+  .why-grid{ display:grid; grid-template-columns: repeat(4, minmax(0,1fr)); gap:20px; }
+  .why{ padding:26px 24px; border-radius:18px; border:1px solid var(--grey-line); background:#fff; position:relative; overflow:hidden; transition: transform var(--fast) var(--ease), border-color var(--fast); }
+  .why:hover{ transform: translateY(-3px); border-color: var(--bd-green); }
+  .why-bn{ display:block; font-size:1.7rem; font-weight:700; color: var(--bd-green); line-height:1.3; }
+  .why h3{ font-size:1.08rem; margin-top:10px; }
+  .why p{ font-size:.9rem; color: var(--ink-soft); margin-top:8px; line-height:1.6; }
+  @media (max-width: 1000px){ .why-grid{ grid-template-columns: repeat(2, minmax(0,1fr)); } }
+  @media (max-width: 560px){ .why-grid{ grid-template-columns:1fr; gap:14px; } }
+
+  /* Projects */
+  .ctb-projects{ background: var(--ink); color:#fff; position:relative; isolation:isolate; overflow:hidden; }
+  .ctb-projects::before{ content:""; position:absolute; inset:0; z-index:-1; background: radial-gradient(640px 340px at 95% 0%, rgba(0,106,78,.55), transparent 70%), radial-gradient(circle at 1px 1px, rgba(255,255,255,.07) 1px, transparent 1.5px) 0 0 / 22px 22px; }
+  .ctb-projects .section-head h2{ color:#fff; }
+  .ctb-projects .section-head p{ color: rgba(255,255,255,.72); }
+  .ctb-projects .eyebrow{ color:#4FD1A5; }
+  .ctb-projects .eyebrow::before{ background:#4FD1A5; }
+  .ctb-tabs{ display:flex; gap:8px; margin-bottom:26px; overflow-x:auto; scrollbar-width:none; }
+  .ctb-tabs::-webkit-scrollbar{ display:none; }
+  .ctb-tab{ --c:#fff; flex:none; font:600 .9rem/1 var(--font-body); color: rgba(255,255,255,.82); background: rgba(255,255,255,.06); border:1px solid rgba(255,255,255,.16); border-radius:100px; padding:11px 18px; cursor:pointer; transition: background var(--fast), color var(--fast), border-color var(--fast); }
+  .ctb-tab:hover{ border-color: rgba(255,255,255,.45); color:#fff; }
+  .ctb-tab[aria-selected="true"]{ background: var(--c); border-color: var(--c); color:#fff; }
+  .ctb-tab[data-prog=""][aria-selected="true"]{ background:#fff; color: var(--ink); }
+  .ctb-tab .n{ opacity:.6; margin-left:4px; font-weight:500; }
+  .ctb-tab:focus-visible, .ctb-card:focus-visible{ outline:2px solid #fff; outline-offset:3px; }
+  .ctb-grid{ display:grid; grid-template-columns: repeat(3, minmax(0,1fr)); gap:22px; }
+  .ctb-grid [hidden]{ display:none !important; }
+  @media (max-width: 1000px){ .ctb-grid{ grid-template-columns: repeat(2, minmax(0,1fr)); } }
+  @media (max-width: 620px){ .ctb-grid{ grid-template-columns:1fr; gap:16px; } }
+  .ctb-card{ --c: var(--blue); all:unset; box-sizing:border-box; cursor:pointer; display:flex; flex-direction:column; background:#fff; color: var(--ink); border-radius:18px; overflow:hidden; transition: transform var(--fast) var(--ease), box-shadow var(--fast) var(--ease); box-shadow: 0 18px 40px -24px rgba(0,0,0,.6); animation: ctb-in .45s var(--ease) both; animation-delay: calc(var(--i,0) * 50ms); }
+  .ctb-card:hover{ transform: translateY(-4px); box-shadow: 0 28px 50px -24px rgba(0,0,0,.8); }
+  @keyframes ctb-in{ from{ opacity:0; transform: translateY(12px); } to{ opacity:1; transform:none; } }
+  .ctb-card-photo{ position:relative; aspect-ratio: 16 / 10; background: var(--c); overflow:hidden; }
+  .ctb-card-photo img{ width:100%; height:100%; object-fit:cover; transition: transform .6s var(--ease); }
+  .ctb-card:hover .ctb-card-photo img{ transform: scale(1.04); }
+  .ctb-badge{ position:absolute; left:14px; top:14px; background: var(--c); color:#fff; font-size:.72rem; font-weight:700; letter-spacing:.04em; padding:6px 11px; border-radius:100px; }
+  .ctb-card-body{ padding:18px 20px 20px; display:flex; flex-direction:column; gap:7px; flex:1; }
+  .ctb-card-loc{ font-size:.72rem; font-weight:700; letter-spacing:.1em; text-transform:uppercase; color: var(--c); }
+  .ctb-card-body h3{ font-size:1.14rem; line-height:1.3; }
+  .ctb-card-partner{ font-size:.86rem; color: var(--ink-soft); font-weight:500; }
+  .ctb-card-sum{ font-size:.88rem; color: var(--ink-soft); line-height:1.55; }
+  .ctb-card-meta{ display:flex; flex-wrap:wrap; gap:6px; margin-top:auto; padding-top:10px; list-style:none; }
+  .ctb-card-meta li{ font-size:.76rem; font-weight:600; padding:6px 10px; border-radius:100px; background: var(--grey); }
+  .ctb-card-more{ margin-top:12px; font-weight:700; font-size:.88rem; color: var(--c); display:inline-flex; align-items:center; gap:6px; }
+  .ctb-card-more svg{ width:16px; height:16px; transition: transform var(--fast) var(--ease); }
+  .ctb-card:hover .ctb-card-more svg{ transform: translateX(3px); }
+
+  /* Detail panel (slide-over on desktop, bottom sheet on phones) */
+  .ctb-dialog{ --c: var(--blue); padding:0; border:0; margin:0 0 0 auto; height:100%; max-height:100dvh; width: min(560px, 100%); max-width:100%; background:#fff; color: var(--ink); box-shadow: -30px 0 60px -20px rgba(0,0,0,.4); }
+  .ctb-dialog::backdrop{ background: rgba(10,16,24,.6); backdrop-filter: blur(2px); }
+  .ctb-dialog[open]{ animation: ctb-slide .32s var(--ease); }
+  @keyframes ctb-slide{ from{ transform: translateX(40px); opacity:0; } to{ transform:none; opacity:1; } }
+  .ctb-d-inner{ display:flex; flex-direction:column; height:100%; }
+  .ctb-d-close{ position:absolute; right:16px; top:16px; z-index:3; width:42px; height:42px; border-radius:50%; border:0; background: rgba(255,255,255,.92); color: var(--ink); display:flex; align-items:center; justify-content:center; cursor:pointer; box-shadow: 0 4px 14px rgba(0,0,0,.18); }
+  .ctb-d-close svg{ width:20px; height:20px; }
+  .ctb-d-close:focus-visible{ outline:2px solid var(--c); outline-offset:2px; }
+  .ctb-d-photo{ position:relative; aspect-ratio: 16 / 9; flex:none; background: var(--c); }
+  .ctb-d-photo img{ width:100%; height:100%; object-fit:cover; }
+  .ctb-d-photo .ctb-sample{ right:auto; left:16px; top:16px; }
+  .ctb-d-body{ padding:24px 28px 8px; overflow-y:auto; flex:1; overscroll-behavior:contain; }
+  .ctb-d-prog{ font-size:.74rem; font-weight:700; letter-spacing:.1em; text-transform:uppercase; color: var(--c); }
+  .ctb-d-body h2{ font-size: clamp(1.4rem, 1.1rem + 1vw, 1.8rem); margin-top:6px; line-height:1.2; }
+  .ctb-d-partner{ margin-top:6px; color: var(--ink-soft); font-weight:500; }
+  .ctb-d-facts{ display:grid; grid-template-columns: repeat(2, minmax(0,1fr)); gap:10px; margin:20px 0 6px; }
+  .ctb-d-facts div{ padding:12px 14px; border-radius:12px; background: color-mix(in srgb, var(--c) 8%, #fff); }
+  .ctb-d-facts dt{ font-size:.7rem; font-weight:700; letter-spacing:.08em; text-transform:uppercase; color: var(--ink-soft); }
+  .ctb-d-facts dd{ margin:4px 0 0; font-weight:600; font-size:.92rem; }
+  .ctb-d-sections h3{ font-size:1rem; margin:22px 0 8px; }
+  .ctb-d-sections p{ color: var(--ink-soft); font-size:.94rem; line-height:1.65; }
+  .ctb-d-sections ul{ list-style:none; display:grid; gap:8px; }
+  .ctb-d-sections li{ position:relative; padding-left:22px; font-size:.93rem; color: var(--ink); line-height:1.5; }
+  .ctb-d-sections li::before{ content:""; position:absolute; left:4px; top:.55em; width:8px; height:8px; border-radius:50%; background: var(--c); }
+  .ctb-d-foot{ flex:none; padding:16px 28px 22px; border-top:1px solid var(--grey-line); background:#fff; }
+  .ctb-d-apply{ width:100%; justify-content:center; background: var(--c); color:#fff; }
+  .ctb-d-apply:hover{ filter: brightness(.93); }
+  .ctb-d-note{ font-size:.8rem; color: var(--ink-soft); text-align:center; margin-top:10px; }
+  @media (max-width: 620px){
+    .ctb-dialog{ margin: auto 0 0 0; width:100%; height: 92dvh; border-radius:20px 20px 0 0; overflow:hidden; }
+    .ctb-dialog[open]{ animation: ctb-up .32s var(--ease); }
+    @keyframes ctb-up{ from{ transform: translateY(40px); opacity:0; } to{ transform:none; opacity:1; } }
+    .ctb-d-body{ padding:20px 20px 6px; }
+    .ctb-d-foot{ padding:14px 20px 18px; }
+  }
+  body.ctb-lock{ overflow:hidden; }
+  /* The site's custom cursor is drawn below the dialog's top layer, so use the normal pointer inside the panel */
+  body.has-custom-cursor .ctb-dialog, body.has-custom-cursor .ctb-dialog *{ cursor:auto; }
+  body.has-custom-cursor .ctb-dialog a, body.has-custom-cursor .ctb-dialog button{ cursor:pointer; }
+  body.ctb-lock .cursor-dot, body.ctb-lock .cursor-ring{ opacity:0 !important; }
+
+
+  /* Included */
+  .inc-grid{ display:grid; grid-template-columns: repeat(3, minmax(0,1fr)); gap:18px; }
+  .inc{ background:#fff; border-radius:18px; padding:24px; border:1px solid var(--grey-line); }
+  .inc-n{ font: 700 .82rem/1 var(--font-display); color: var(--bd-green); background: color-mix(in srgb, var(--bd-green) 10%, #fff); padding:7px 10px; border-radius:8px; }
+  .inc h3{ font-size:1.05rem; margin-top:16px; }
+  .inc p{ font-size:.9rem; color: var(--ink-soft); margin-top:6px; line-height:1.6; }
+  @media (max-width: 1000px){ .inc-grid{ grid-template-columns: repeat(2, minmax(0,1fr)); } }
+  @media (max-width: 560px){ .inc-grid{ grid-template-columns:1fr; gap:12px; } }
+
+  /* Accommodation */
+  .acc-wrap{ display:grid; grid-template-columns: minmax(0,5fr) minmax(0,7fr); gap:48px; align-items:center; }
+  .acc-text h2{ font-size: var(--step-3); margin-top:10px; }
+  .acc-text > p{ color: var(--ink-soft); margin-top:14px; }
+  .acc-list{ list-style:none; margin-top:20px; display:grid; gap:10px; }
+  .acc-list li{ position:relative; padding-left:28px; font-weight:500; }
+  .acc-list li::before{ content:""; position:absolute; left:0; top:.2em; width:18px; height:18px; border-radius:50%; background: color-mix(in srgb, var(--bd-green) 14%, #fff) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23006A4E' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M5 12l5 5L19 8'/%3E%3C/svg%3E") center/12px no-repeat; }
+  .acc-note{ font-size:.84rem; color: var(--ink-soft); margin-top:18px; }
+  .acc-gallery{ display:grid; grid-template-columns: 1.4fr 1fr; grid-template-rows: 1fr 1fr; gap:14px; height: 460px; }
+  .acc-ph{ position:relative; margin:0; border-radius:18px; overflow:hidden; background: var(--grey); }
+  .acc-ph--a{ grid-row: 1 / 3; }
+  .acc-ph img{ width:100%; height:100%; object-fit:cover; }
+  .acc-ph figcaption{ position:absolute; left:12px; bottom:12px; background: rgba(16,24,32,.72); color:#fff; font-size:.76rem; font-weight:700; padding:7px 11px; border-radius:100px; backdrop-filter: blur(6px); }
+  @media (max-width: 900px){
+    .acc-wrap{ grid-template-columns:1fr; gap:28px; }
+    .acc-gallery{ height: 380px; }
+  }
+  @media (max-width: 520px){ .acc-gallery{ height: 300px; grid-template-columns: 1.2fr 1fr; gap:10px; } }
+
+  /* Life */
+  .life-grid{ display:grid; grid-template-columns: repeat(3, minmax(0,1fr)); gap:0; border-top:1px solid var(--grey-line); }
+  .life{ padding:26px 24px 26px 0; border-bottom:1px solid var(--grey-line); }
+  .life h3{ font-size:1.02rem; display:flex; align-items:center; gap:10px; }
+  .life h3::before{ content:""; width:8px; height:8px; border-radius:50%; background: var(--bd-red); }
+  .life p{ font-size:.9rem; color: var(--ink-soft); margin-top:8px; line-height:1.6; max-width:38ch; }
+  @media (max-width: 900px){ .life-grid{ grid-template-columns: repeat(2, minmax(0,1fr)); } }
+  @media (max-width: 560px){ .life-grid{ grid-template-columns:1fr; } .life{ padding:20px 0; } }
+
+  @media (prefers-reduced-motion: reduce){
+    .ctb-card, .ctb-dialog[open]{ animation:none; }
+    .ctb-card, .ctb-card-photo img, .why{ transition:none; }
+  }
+  </style>
+</head>
+<body class="">
+  <div id="page-loader" aria-hidden="true">
+    <div class="loader-logo-slot" id="loader-logo"><!-- Put your static logo <img> here --></div>
+    <div class="loader-spinner"></div>
+    <div class="loader-text">AIESEC IN BANGLADESH</div>
+  </div>
+  <a href="#main" class="skip-link">Skip to content</a>
+  <header class="site-header">
+    <div class="container">
+      <a href="index.html" class="brand" aria-label="AIESEC in Bangladesh — home">
+        <img class="brand-mark-light" src="assets/images/aiesec-logo-primary-white.png" alt="AIESEC in Bangladesh logo">
+        <img class="brand-mark-dark" src="assets/images/aiesec-logo-primary-blue.png" alt="AIESEC in Bangladesh logo">
+      </a>
+
+      <nav class="main-nav" aria-label="Primary">
+        <ul>
+          <li><a href="about.html" class="nav-link">About Us</a></li>
+          <li class="has-mega">
+            <a href="for-students.html" class="nav-link" aria-haspopup="true" aria-expanded="false">For Students <span class="caret"></span></a>
+            <div class="mega mega--wide" role="menu">
+              <span class="mega-col-title">Programs</span>
+              <span class="mega-col-title">Explore</span>
+              <span class="mega-col-title">Updates</span>
+              <a href="volunteer-abroad.html" role="menuitem"><span class="dot" style="background:#F85A40"></span><span class="mega-txt"><strong>Volunteer Abroad</strong><span>6–8 week SDG-aligned projects</span></span></a>
+              <a href="local-committees.html" role="menuitem"><span class="dot" style="background:#037EF3"></span><span class="mega-txt"><strong>Local Committees</strong><span>4 committees across Dhaka</span></span></a>
+              <a href="blog.html" role="menuitem"><span class="dot" style="background:#037EF3"></span><span class="mega-txt"><strong>Blog &amp; News</strong><span>Stories from our members</span></span></a>
+              <a href="intern-abroad.html" role="menuitem"><span class="dot" style="background:#0CB9C1"></span><span class="mega-txt"><strong>Intern Abroad</strong><span>Paid global internships</span></span></a>
+              <a href="success-stories.html" role="menuitem"><span class="dot" style="background:#037EF3"></span><span class="mega-txt"><strong>Success Stories</strong><span>Real exchange experiences</span></span></a>
+              <a href="events.html" role="menuitem"><span class="dot" style="background:#7552CC"></span><span class="mega-txt"><strong>Events</strong><span>YSF, Global Village &amp; more</span></span></a>
+              <a href="teach-abroad.html" role="menuitem"><span class="dot" style="background:#F48924"></span><span class="mega-txt"><strong>Teach Abroad</strong><span>Classroom exchange programs</span></span></a>
+              <a href="faq.html" role="menuitem"><span class="dot" style="background:#037EF3"></span><span class="mega-txt"><strong>FAQs</strong><span>Answers before you apply</span></span></a>
+              <a href="careers.html" role="menuitem"><span class="dot" style="background:#101820"></span><span class="mega-txt"><strong>Join Our Team</strong><span>Internal leadership roles</span></span></a>
+              <a href="join-member.html" role="menuitem"><span class="dot" style="background:#037EF3"></span><span class="mega-txt"><strong>Become a Member</strong><span>Join a Local Committee</span></span></a>
+            </div>
+          </li>
+          <li class="has-mega">
+            <a href="for-organizations.html" class="nav-link" aria-haspopup="true" aria-expanded="false">For Organizations <span class="caret"></span></a>
+            <div class="mega" role="menu">
+              <span class="mega-col-title" style="grid-column:span 2;">Partner with AIESEC in Bangladesh</span>
+              <a href="for-organizations.html#hire-intern" role="menuitem"><span class="dot" style="background:#0CB9C1"></span><span class="mega-txt"><strong>Hire an Intern</strong><span>Global Talent for your team</span></span></a>
+              <a href="for-organizations.html#hire-volunteer" role="menuitem"><span class="dot" style="background:#F85A40"></span><span class="mega-txt"><strong>Hire a Volunteer</strong><span>CSR &amp; SDG-aligned projects</span></span></a>
+              <a href="for-organizations.html#hire-teacher" role="menuitem"><span class="dot" style="background:#F48924"></span><span class="mega-txt"><strong>Hire a Teacher</strong><span>Bring global educators onboard</span></span></a>
+              <a href="for-organizations.html#employer-branding" role="menuitem"><span class="dot" style="background:#037EF3"></span><span class="mega-txt"><strong>Youth Engagement</strong><span>Employer branding with Gen Z</span></span></a>
+            </div>
+          </li>
+          <li><a href="come-to-bangladesh.html" class="nav-link" aria-current="page">Come to Bangladesh</a></li>
+          <li><a href="contact.html" class="nav-link">Contact</a></li>
+        </ul>
+      </nav>
+
+      <div class="header-cta">
+        <a href="#projects" class="btn btn-white btn-sm">Explore Projects</a>
+        <button class="burger" aria-label="Toggle menu" aria-expanded="false">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+  <main id="main">
+
+    <!-- ===================== HERO ===================== -->
+    <section class="ctb-hero">
+      <img class="ctb-hero-img" src="assets/images/hero-slide-2.jpg" alt="Lalbagh Fort in Old Dhaka under a blue sky">
+      <div class="container ctb-hero-inner">
+        <div class="breadcrumb"><a href="index.html">Home</a> / <span>Come to Bangladesh</span></div>
+        <p class="ctb-kicker"><span lang="bn">স্বাগতম</span> · Welcome</p>
+        <h1>Discover Bangladesh</h1>
+        <p class="ctb-lede">Volunteer, intern or teach with AIESEC in Bangladesh. Live with local youth, work with our partners, and see a country most travellers never get to know.</p>
+        <div class="ctb-hero-cta">
+          <a href="#projects" class="btn btn-white">Explore projects</a>
+          <a href="#included" class="btn btn-ghost-white">What's included</a>
+        </div>
+        <ul class="ctb-progs" aria-label="Programmes available">
+          <li style="--c:var(--volunteer)"><b>Global Volunteer</b><span>6-week social impact projects</span></li>
+          <li style="--c:var(--talent)"><b>Global Talent</b><span>Paid professional internships</span></li>
+          <li style="--c:var(--teach)"><b>Global Teacher</b><span>Paid teaching positions</span></li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- ===================== WHY BANGLADESH ===================== -->
+    <section class="section">
+      <div class="container">
+        <div class="section-head reveal">
+          <span class="eyebrow">Why Bangladesh</span>
+          <h2>A country you feel before you understand it</h2>
+          <p>Rivers, rickshaws, festivals and some of the warmest hospitality in the world.</p>
+        </div>
+        <div class="why-grid">
+          <article class="why reveal"><span class="why-bn" lang="bn">আতিথেয়তা</span><h3>Hospitality</h3><p>Guests are treated like family. Expect to be invited for tea, for dinner, and to more weddings than you can attend.</p></article>
+          <article class="why reveal"><span class="why-bn" lang="bn">খাবার</span><h3>Food</h3><p>Biryani in Old Dhaka, fresh hilsa fish, street-side fuchka and endless cups of milk tea. You will not go hungry.</p></article>
+          <article class="why reveal"><span class="why-bn" lang="bn">প্রকৃতি</span><h3>Nature</h3><p>The Sundarbans mangrove forest, the long beach at Cox's Bazar, and the green tea gardens of Sylhet.</p></article>
+          <article class="why reveal"><span class="why-bn" lang="bn">উৎসব</span><h3>Festivals</h3><p>Celebrate Pohela Boishakh (Bengali New Year), Eid and many local festivals with music, colour and street food.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== PROJECTS ===================== -->
+    <section class="section ctb-projects" id="projects" aria-labelledby="projects-title">
+      <div class="container">
+        <div class="ctb-headrow">
+          <div class="section-head">
+            <span class="eyebrow">Our projects</span>
+            <h2 id="projects-title">Projects hosted by AIESEC in Bangladesh</h2>
+            <p>Every project is run with a local partner organisation. Tap a project to see the full details, then apply on aiesec.org.</p>
+          </div>
+        </div>
+        <div class="ctb-tabs" role="tablist" aria-label="Filter by programme">
+          <button type="button" role="tab" class="ctb-tab" data-prog="" aria-selected="true">All <span class="n"></span></button>
+          <button type="button" role="tab" class="ctb-tab" data-prog="GV" aria-selected="false" style="--c:var(--volunteer)">Volunteer <span class="n"></span></button>
+          <button type="button" role="tab" class="ctb-tab" data-prog="GTa" aria-selected="false" style="--c:var(--talent)">Intern <span class="n"></span></button>
+          <button type="button" role="tab" class="ctb-tab" data-prog="GTe" aria-selected="false" style="--c:var(--teach)">Teach <span class="n"></span></button>
+        </div>
+        <div class="ctb-grid" role="tabpanel" aria-labelledby="projects-title"></div>
+      </div>
+      <script>
+      /* ============================================================
+         EDIT YOUR BANGLADESH PROJECTS HERE
+         - One { ... } block per project. Copy a block to add one,
+           delete a block to remove it.
+         - programme: "GV" (Volunteer), "GTa" (Intern) or "GTe" (Teach)
+         - url: the project's aiesec.org link. While it's "", the
+           Apply button goes to that programme's page on aiesec.org.
+         - photo: any image path, e.g. "assets/images/come/project-1.jpg"
+         - Lists (activities, requirements, provided) are shown as
+           bullet points in the detail panel.
+         - These are SAMPLES (yellow "Sample" label). Replace them
+           with your real projects and delete "sample: true,".
+         ============================================================ */
+      window.CTB_PROJECTS = [
+        {
+          sample: true, programme: "GV", url: "",
+          title: "Global Classroom", partner: "Partner school in Dhaka", city: "Dhaka",
+          duration: "6 weeks", dates: "Start dates announced on aiesec.org", focus: "SDG 4 · Quality Education",
+          photo: "assets/images/hero-slide-3.jpg",
+          summary: "Run interactive English and life-skills sessions for students at a partner school in Dhaka.",
+          about: "Children at our partner school have few chances to practise English with native or fluent speakers. You'll work in a small team of international volunteers to plan and deliver fun, interactive sessions that build confidence in speaking, teamwork and global awareness.",
+          activities: ["Plan and deliver English conversation sessions", "Run workshops on the SDGs and global citizenship", "Organise cultural exchange days with students", "Support the school with simple teaching materials"],
+          requirements: ["Age 18–30", "Good spoken English", "Comfortable working with children", "Open to learning about a new culture"],
+          provided: ["Accommodation arranged by AIESEC", "Airport pickup on arrival", "Local buddy and orientation", "Certificate of completion"]
+        },
+        {
+          sample: true, programme: "GV", url: "",
+          title: "Green Leaders", partner: "Partner environmental NGO", city: "Sylhet",
+          duration: "6 weeks", dates: "Start dates announced on aiesec.org", focus: "SDG 13 · Climate Action",
+          photo: "assets/images/hero-slide-2.jpg",
+          summary: "Raise climate awareness with youth and communities through workshops and local campaigns.",
+          about: "Bangladesh is one of the countries most affected by climate change. With our partner NGO you'll run awareness sessions in schools and communities, and help design a small campaign that encourages sustainable habits.",
+          activities: ["Deliver climate awareness workshops", "Help plan a community clean-up or tree-planting day", "Create social media content for the campaign", "Collect stories and feedback from participants"],
+          requirements: ["Age 18–30", "Interest in environment or sustainability", "Good spoken English", "Team player"],
+          provided: ["Accommodation arranged by AIESEC", "Airport pickup on arrival", "Local buddy and orientation", "Certificate of completion"]
+        },
+        {
+          sample: true, programme: "GV", url: "",
+          title: "Heartbeat", partner: "Partner health organisation", city: "Dhaka",
+          duration: "6 weeks", dates: "Start dates announced on aiesec.org", focus: "SDG 3 · Good Health",
+          photo: "assets/images/hero-slide-1.jpg",
+          summary: "Promote healthy lifestyles and mental wellbeing among young people in Dhaka.",
+          about: "Work with our partner to run awareness sessions on mental health, healthy habits and preventing non-communicable diseases for university and school students.",
+          activities: ["Run mental health and wellbeing sessions", "Create awareness materials and posts", "Help organise a health awareness event", "Gather feedback to improve the sessions"],
+          requirements: ["Age 18–30", "Good spoken English", "Empathy and good communication", "Interest in health or psychology is a plus"],
+          provided: ["Accommodation arranged by AIESEC", "Airport pickup on arrival", "Local buddy and orientation", "Certificate of completion"]
+        },
+        {
+          sample: true, programme: "GTa", url: "",
+          title: "Digital Marketing Intern", partner: "Partner company in Dhaka", city: "Dhaka",
+          duration: "3–6 months", dates: "Start dates announced on aiesec.org", focus: "Marketing", salary: "Monthly salary (see aiesec.org)",
+          photo: "assets/images/hero-slide-1.jpg",
+          summary: "Plan and run social media and content campaigns for a growing Dhaka-based company.",
+          about: "Join the marketing team of a partner company and help it grow its brand online. You'll plan content, run campaigns and report on results alongside a local team.",
+          activities: ["Plan a monthly content calendar", "Create posts, visuals and short videos", "Track campaign results and suggest improvements", "Support product launches and events"],
+          requirements: ["Student or recent graduate in marketing, communications or business", "Good written English", "Experience with social media tools", "Portfolio is a plus"],
+          provided: ["Monthly salary from the host company", "Help finding accommodation", "Airport pickup on arrival", "Visa support from AIESEC"]
+        },
+        {
+          sample: true, programme: "GTa", url: "",
+          title: "Software Developer Intern", partner: "Partner tech company", city: "Dhaka",
+          duration: "3–6 months", dates: "Start dates announced on aiesec.org", focus: "Software · IT", salary: "Monthly salary (see aiesec.org)",
+          photo: "assets/images/hero-slide-3.jpg",
+          summary: "Build features for a web product with a fast-moving development team in Dhaka.",
+          about: "Work alongside developers and designers at a partner tech company to build and test new product features.",
+          activities: ["Develop and test new features", "Fix bugs and improve performance", "Join daily stand-ups and code reviews", "Document your work"],
+          requirements: ["Student or recent graduate in computer science or related field", "Experience with at least one programming language", "Good English", "Git basics"],
+          provided: ["Monthly salary from the host company", "Help finding accommodation", "Airport pickup on arrival", "Visa support from AIESEC"]
+        },
+        {
+          sample: true, programme: "GTe", url: "",
+          title: "English Language Teacher", partner: "Partner school in Dhaka", city: "Dhaka",
+          duration: "3–6 months", dates: "Start dates announced on aiesec.org", focus: "English", salary: "Monthly salary (see aiesec.org)",
+          photo: "assets/images/hero-slide-2.jpg",
+          summary: "Teach English speaking and writing to secondary school students.",
+          about: "Help students at our partner school build confidence in English through engaging, learner-centred lessons, working with the school's teaching team.",
+          activities: ["Plan and teach English lessons", "Run speaking clubs and debates", "Assess student progress", "Support school events"],
+          requirements: ["Degree or studying in education, English or a related field", "Fluent English", "Teaching or tutoring experience is a plus"],
+          provided: ["Monthly salary from the host school", "Help finding accommodation", "Airport pickup on arrival", "Visa support from AIESEC"]
+        },
+        {
+          sample: true, programme: "GTe", url: "",
+          title: "IT & Computer Teacher", partner: "Partner college", city: "Chattogram",
+          duration: "3–6 months", dates: "Start dates announced on aiesec.org", focus: "Computer Science", salary: "Monthly salary (see aiesec.org)",
+          photo: "assets/images/hero-slide-3.jpg",
+          summary: "Teach computer basics, programming and digital skills to college students.",
+          about: "Bring practical digital skills to students at our partner college, from computer basics to introductory programming.",
+          activities: ["Teach IT and programming classes", "Prepare lesson plans and exercises", "Run a coding club", "Mark assignments and exams"],
+          requirements: ["Degree or studying in computer science or IT", "Good English", "Patience and clear communication"],
+          provided: ["Monthly salary from the host college", "Help finding accommodation", "Airport pickup on arrival", "Visa support from AIESEC"]
+        }
+      ];
+      </script>
+    </section>
+
+    <!-- Project detail panel -->
+    <dialog class="ctb-dialog" id="ctb-dialog" aria-labelledby="ctb-d-title">
+      <div class="ctb-d-inner">
+        <button type="button" class="ctb-d-close" aria-label="Close project details"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M6 6l12 12M18 6 6 18"/></svg></button>
+        <div class="ctb-d-photo"><img alt=""><span class="ctb-sample" hidden>Sample</span></div>
+        <div class="ctb-d-body">
+          <p class="ctb-d-prog"></p>
+          <h2 id="ctb-d-title"></h2>
+          <p class="ctb-d-partner"></p>
+          <dl class="ctb-d-facts"></dl>
+          <div class="ctb-d-sections"></div>
+        </div>
+        <div class="ctb-d-foot">
+          <a class="btn ctb-d-apply" target="_blank" rel="noopener">Apply on aiesec.org</a>
+          <p class="ctb-d-note">You'll create a free AIESEC account and apply on aiesec.org.</p>
+        </div>
+      </div>
+    </dialog>
+
+    <!-- ===================== WHAT'S INCLUDED ===================== -->
+    <section class="section bg-offwhite" id="included">
+      <div class="container">
+        <div class="section-head reveal">
+          <span class="eyebrow">What's included</span>
+          <h2>From the airport to your last day, we've got you</h2>
+          <p>Your host Local Committee in Bangladesh supports you through the whole experience.</p>
+        </div>
+        <div class="inc-grid">
+          <div class="inc reveal"><span class="inc-n">01</span><h3>Airport pickup</h3><p>An AIESEC member meets you at the airport and takes you to your accommodation.</p></div>
+          <div class="inc reveal"><span class="inc-n">02</span><h3>Accommodation</h3><p>Volunteers stay in accommodation arranged by AIESEC. Interns and teachers get help finding a place.</p></div>
+          <div class="inc reveal"><span class="inc-n">03</span><h3>A local buddy</h3><p>A Bangladeshi member helps with SIM cards, transport, food and everything in between.</p></div>
+          <div class="inc reveal"><span class="inc-n">04</span><h3>Orientation</h3><p>A welcome session on your project, the city, safety and Bangladeshi culture.</p></div>
+          <div class="inc reveal"><span class="inc-n">05</span><h3>Visa guidance</h3><p>We guide you through the visa process and provide the documents your application needs.</p></div>
+          <div class="inc reveal"><span class="inc-n">06</span><h3>Support throughout</h3><p>A dedicated AIESEC contact you can reach any time during your stay.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== ACCOMMODATION ===================== -->
+    <section class="section" id="accommodation">
+      <div class="container acc-wrap">
+        <div class="acc-text reveal">
+          <span class="eyebrow">Where you'll stay</span>
+          <h2>Your home in Bangladesh</h2>
+          <p>Volunteers usually share a furnished apartment or stay with a host family close to their project. You'll live with other international volunteers or local members, so you're never far from help or company.</p>
+          <ul class="acc-list">
+            <li>Shared bedroom with a bed, fan and storage</li>
+            <li>Shared kitchen and bathroom</li>
+            <li>Wi-Fi or mobile data support</li>
+            <li>Close to public transport and local shops</li>
+          </ul>
+          <p class="acc-note">Exact arrangements depend on the project and are listed on each project's aiesec.org page.</p>
+        </div>
+        <!-- Replace the 3 photos below with your own, e.g. assets/images/come/room.jpg -->
+        <div class="acc-gallery reveal">
+          <figure class="acc-ph acc-ph--a"><img src="assets/images/hero-slide-1.jpg" alt="Sample photo of accommodation" loading="lazy"><figcaption>Bedroom</figcaption><span class="ctb-sample">Sample photo</span></figure>
+          <figure class="acc-ph acc-ph--b"><img src="assets/images/hero-slide-3.jpg" alt="Sample photo of shared living space" loading="lazy"><figcaption>Living space</figcaption><span class="ctb-sample">Sample photo</span></figure>
+          <figure class="acc-ph acc-ph--c"><img src="assets/images/hero-slide-2.jpg" alt="Sample photo of the neighbourhood" loading="lazy"><figcaption>Neighbourhood</figcaption><span class="ctb-sample">Sample photo</span></figure>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== LIFE IN BANGLADESH ===================== -->
+    <section class="section life-section">
+      <div class="container">
+        <div class="section-head reveal">
+          <span class="eyebrow">Good to know</span>
+          <h2>Life in Bangladesh, the practical bits</h2>
+        </div>
+        <div class="life-grid">
+          <div class="life reveal"><h3>Money</h3><p>The currency is the Bangladeshi Taka (BDT). Cards work in cities, but carry cash for markets, rickshaws and street food.</p></div>
+          <div class="life reveal"><h3>Weather</h3><p>Hot and humid most of the year. Monsoon runs roughly June to October; November to February is mild and dry.</p></div>
+          <div class="life reveal"><h3>Getting around</h3><p>Rickshaws, CNG auto-rickshaws, ride-hailing apps and the Dhaka Metro Rail. Your buddy will show you how.</p></div>
+          <div class="life reveal"><h3>Phone &amp; internet</h3><p>Get a local SIM on arrival with your passport. Mobile data is affordable and widely available.</p></div>
+          <div class="life reveal"><h3>Language</h3><p>Bangla is the national language. English is common at universities and workplaces, and a few Bangla words go a long way.</p></div>
+          <div class="life reveal"><h3>Culture &amp; dress</h3><p>Bangladesh is a Muslim-majority country. Modest clothing that covers shoulders and knees is appreciated.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== STORIES ===================== -->
+    <section class="section stories-section" data-stories style="--acc:var(--blue);" aria-labelledby="stories-title" aria-roledescription="carousel">
+      <div class="container">
+        <div class="section-head">
+          <span class="eyebrow">Stories</span>
+          <h2 id="stories-title">What international EPs say about Bangladesh</h2>
+          <p>Young people from around the world who came to Bangladesh with AIESEC.</p>
+        </div>
+        <div class="stories">
+          <div class="stories-track"></div>
+          <div class="stories-nav">
+            <div class="story-dots"></div>
+            <div class="story-btns">
+              <button type="button" class="story-btn story-btn--prev" aria-label="Previous story"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 18 9 12l6-6"/></svg></button>
+              <button type="button" class="story-btn story-btn--next" aria-label="Next story"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18 6-6-6-6"/></svg></button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <script>
+      /* EDIT STORIES HERE. These are SAMPLES: replace them and delete "sample: true,". */
+      window.AIESEC_STORIES = [
+        { sample: true, photo: "assets/images/hero-slide-3.jpg", name: "Sample EP", from: "Indonesia", country: "Dhaka", trip: "Volunteered in Bangladesh", project: "Global Classroom", lc: "Hosted by AIESEC in Dhaka", quote: "Sample quote: replace with your EP's words about the people, the food and what they learned in Bangladesh." },
+        { sample: true, photo: "assets/images/hero-slide-1.jpg", name: "Sample EP", from: "Egypt", country: "Sylhet", trip: "Volunteered in Bangladesh", project: "Green Leaders", lc: "Hosted by AIESEC in Bangladesh", quote: "Sample quote: replace with a real story. Two or three sentences about the experience work best." },
+        { sample: true, photo: "assets/images/hero-slide-2.jpg", name: "Sample EP", from: "Türkiye", country: "Dhaka", trip: "Taught in Bangladesh", project: "English Language Teacher", lc: "Hosted by AIESEC in Dhaka", quote: "Sample quote: replace with what your teacher or intern EP says about working in Bangladesh." }
+      ];
+      </script>
+    </section>
+
+    <!-- ===================== FAQ ===================== -->
+    <section class="section bg-offwhite" id="faqs-ctb">
+      <div class="container">
+        <div class="section-head reveal">
+          <span class="eyebrow">FAQs</span>
+          <h2>Questions before you come</h2>
+        </div>
+        <div class="accordion reveal" data-single style="max-width:820px;">
+          <div class="acc-item is-open">
+            <button class="acc-trigger" aria-expanded="true"><span>Is Bangladesh safe for international volunteers?</span><span class="plus"></span></button>
+            <div class="acc-panel" style="max-height:260px;"><div class="acc-panel-inner"><p>Your host LC vets every partner, arranges your pickup and accommodation, and gives you a local buddy and a contact you can reach any time. As anywhere, follow your buddy's advice and the orientation guidance.</p></div></div>
+          </div>
+          <div class="acc-item">
+            <button class="acc-trigger" aria-expanded="false"><span>Do I need a visa?</span><span class="plus"></span></button>
+            <div class="acc-panel"><div class="acc-panel-inner"><p>Most nationalities need a visa. Requirements depend on your country and programme, so check with the Bangladesh embassy in your country. Your host LC will send you the documents you need and guide you through the process.</p></div></div>
+          </div>
+          <div class="acc-item">
+            <button class="acc-trigger" aria-expanded="false"><span>Do I need to speak Bangla?</span><span class="plus"></span></button>
+            <div class="acc-panel"><div class="acc-panel-inner"><p>No. Projects run in English, and your buddy will help you day to day. Learning a few words like "dhonnobad" (thank you) will make people smile.</p></div></div>
+          </div>
+          <div class="acc-item">
+            <button class="acc-trigger" aria-expanded="false"><span>What is the food like? Are there vegetarian options?</span><span class="plus"></span></button>
+            <div class="acc-panel"><div class="acc-panel-inner"><p>Bangladeshi food is rice-based and often spicy, with plenty of fish, lentils and vegetables. Vegetarian food is easy to find. Tell your buddy about any allergies or diets.</p></div></div>
+          </div>
+          <div class="acc-item">
+            <button class="acc-trigger" aria-expanded="false"><span>How do I apply?</span><span class="plus"></span></button>
+            <div class="acc-panel"><div class="acc-panel-inner"><p>Pick a project above and click "Apply on aiesec.org". You'll create a free AIESEC account, apply, and our team will contact you for an interview.</p></div></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section--tight">
+      <div class="container">
+        <div class="cta-banner reveal" style="background:linear-gradient(120deg,#006A4E,#037EF3);">
+          <div>
+            <h3>Ready to discover Bangladesh?</h3>
+            <p>Choose a project and apply on aiesec.org. Our team will be in touch.</p>
+          </div>
+          <div class="cta-actions"><a href="#projects" class="btn btn-white">Explore projects</a></div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-top">
+        <div class="footer-brand">
+          <img src="assets/images/aiesec-logo-primary-white.png" alt="AIESEC in Bangladesh logo">
+          <p>The national chapter of AIESEC, the world's largest youth-run organization, developing leadership in Bangladesh since 1997 through global exchange.</p>
+          <div class="footer-social">
+            <a href="https://www.facebook.com/aiesecbd" aria-label="AIESEC in Bangladesh on Facebook" target="_blank" rel="noopener"><svg viewBox="0 0 24 24"><path d="M22 12a10 10 0 1 0-11.6 9.9v-7H7.9V12h2.5V9.8c0-2.5 1.5-3.9 3.8-3.9 1.1 0 2.2.2 2.2.2v2.5h-1.3c-1.2 0-1.6.8-1.6 1.6V12h2.8l-.4 2.9h-2.4v7A10 10 0 0 0 22 12Z"/></svg></a>
+            <a href="https://www.linkedin.com/company/aiesecbd/posts/?feedView=all" aria-label="AIESEC in Bangladesh on LinkedIn" target="_blank" rel="noopener"><svg viewBox="0 0 24 24"><path d="M6.94 5a2 2 0 1 1-4-.02 2 2 0 0 1 4 .02ZM3.3 8.75h3.6V21H3.3V8.75Zm6.2 0h3.45v1.68h.05c.48-.9 1.66-1.86 3.42-1.86 3.66 0 4.33 2.4 4.33 5.53V21h-3.6v-5.7c0-1.36-.02-3.1-1.89-3.1-1.9 0-2.19 1.48-2.19 3v5.8H9.5V8.75Z"/></svg></a>
+            <a href="https://www.instagram.com/aiesecinbangladesh/" aria-label="AIESEC in Bangladesh on Instagram" target="_blank" rel="noopener"><svg viewBox="0 0 24 24"><path d="M12 2c2.7 0 3.06.01 4.12.06 1.06.05 1.79.22 2.43.47a4.9 4.9 0 0 1 1.77 1.15 4.9 4.9 0 0 1 1.15 1.77c.25.64.42 1.37.47 2.43.05 1.06.06 1.42.06 4.12s-.01 3.06-.06 4.12c-.05 1.06-.22 1.79-.47 2.43a4.9 4.9 0 0 1-1.15 1.77 4.9 4.9 0 0 1-1.77 1.15c-.64.25-1.37.42-2.43.47-1.06.05-1.42.06-4.12.06s-3.06-.01-4.12-.06c-1.06-.05-1.79-.22-2.43-.47a4.9 4.9 0 0 1-1.77-1.15 4.9 4.9 0 0 1-1.15-1.77c-.25-.64-.42-1.37-.47-2.43C2.01 15.06 2 14.7 2 12s.01-3.06.06-4.12c.05-1.06.22-1.79.47-2.43a4.9 4.9 0 0 1 1.15-1.77A4.9 4.9 0 0 1 5.45.53C6.09.28 6.82.11 7.88.06 8.94.01 9.3 0 12 0Zm0 5a5 5 0 1 0 0 10 5 5 0 0 0 0-10Zm0 8.2a3.2 3.2 0 1 1 0-6.4 3.2 3.2 0 0 1 0 6.4Zm5.2-8.4a1.17 1.17 0 1 0 0-2.34 1.17 1.17 0 0 0 0 2.34Z"/></svg></a>
+          </div>
+        </div>
+        <div class="footer-col">
+          <h5>For Students</h5>
+          <ul>
+            <li><a href="volunteer-abroad.html">Volunteer Abroad</a></li>
+            <li><a href="intern-abroad.html">Intern Abroad</a></li>
+            <li><a href="teach-abroad.html">Teach Abroad</a></li>
+            <li><a href="apply.html">Apply Now</a></li>
+            <li><a href="come-to-bangladesh.html">Come to Bangladesh</a></li>
+            <li><a href="join-member.html">Become a Member</a></li>
+            <li><a href="success-stories.html">Success Stories</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h5>Organization</h5>
+          <ul>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="local-committees.html">Local Committees</a></li>
+            <li><a href="events.html">Events</a></li>
+            <li><a href="blog.html">Blog &amp; News</a></li>
+            <li><a href="careers.html">Join Our Team</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h5>For Organizations</h5>
+          <ul>
+            <li><a href="for-organizations.html#hire-intern">Hire an Intern</a></li>
+            <li><a href="for-organizations.html#hire-volunteer">Hire a Volunteer</a></li>
+            <li><a href="for-organizations.html#hire-teacher">Hire a Teacher</a></li>
+            <li><a href="faq.html">FAQ</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h5>Get in touch</h5>
+          <ul class="footer-contact">
+            <li>Dhaka, Bangladesh</li>
+            <li><a href="mailto:aiesec.bangladesh@aiesec.net">aiesec.bangladesh@aiesec.net</a></li>
+          </ul>
+          <form class="newsletter-form" data-ajax-form data-email-endpoint="https://formsubmit.co/ajax/aiesec.bangladesh@aiesec.net" aria-label="Newsletter signup">
+            <label for="nl-email" class="sr-only" style="position:absolute;left:-9999px;">Email address</label>
+            <input type="hidden" name="_subject" value="New Newsletter Subscriber — AIESEC in Bangladesh">
+            <input type="text" name="_honey" style="display:none" tabindex="-1" autocomplete="off">
+            <input type="email" id="nl-email" name="Subscriber email" placeholder="Your email" required>
+            <button type="submit">Join</button>
+          </form>
+          <p class="form-note" style="color:rgba(255,255,255,.4)">Monthly opportunities, no spam.</p>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>© <span data-year>2026</span> AIESEC in Bangladesh. All rights reserved.</p>
+        <div class="footer-legal">
+          <a href="faq.html">FAQ</a>
+          <a href="contact.html">Contact</a>
+          <a href="careers.html">Careers</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <a href="https://wa.me/8801711475365" class="float-chat" target="_blank" rel="noopener" aria-label="Chat with us on WhatsApp">
+    <span class="ping"></span>
+    <svg viewBox="0 0 24 24"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.87.51 3.63 1.4 5.15L2 22l5.1-1.5a9.87 9.87 0 0 0 4.94 1.33h.01c5.46 0 9.91-4.45 9.91-9.91C21.96 6.45 17.5 2 12.04 2Zm5.8 14.03c-.24.68-1.4 1.3-1.93 1.36-.5.06-1.03.28-3.42-.71-2.88-1.19-4.73-4.1-4.87-4.29-.14-.19-1.17-1.56-1.17-2.98s.74-2.11 1-2.4c.26-.29.57-.36.76-.36.19 0 .38 0 .55.01.18.01.42-.07.65.5.24.58.82 2 .89 2.15.07.15.12.32.02.51-.1.19-.15.31-.3.48-.15.17-.31.38-.44.51-.15.15-.3.31-.13.6.17.29.76 1.25 1.63 2.02 1.12 1 2.06 1.31 2.35 1.46.29.15.46.13.63-.08.17-.21.72-.84.91-1.13.19-.29.38-.24.64-.14.26.1 1.66.78 1.94.93.29.14.48.21.55.33.07.12.07.7-.17 1.37Z"/></svg>
+  </a>
+  <button class="back-top" aria-label="Back to top">
+    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#101820" stroke-width="2.4" stroke-linecap="round"><path d="M12 19V5M5 12l7-7 7 7"/></svg>
+  </button>
+
+  <script src="js/main.js" defer></script>
+  <!-- Featured projects + EP stories: builds the cards from the lists above. No need to edit this. -->
+  <script>
+  (function(){
+    "use strict";
+    var CODES = { "bangladesh":"DAC","vietnam":"VNM","south korea":"KOR","korea":"KOR","nepal":"NPL","philippines":"PHL","sri lanka":"LKA","indonesia":"IDN","türkiye":"TUR","turkey":"TUR","egypt":"EGY","india":"IND","malaysia":"MYS","thailand":"THA","cambodia":"KHM","china":"CHN","mainland of china":"CHN","taiwan":"TWN","hong kong":"HKG","japan":"JPN","pakistan":"PAK","morocco":"MAR","tunisia":"TUN","kenya":"KEN","ghana":"GHA","nigeria":"NGA","brazil":"BRA","colombia":"COL","peru":"PER","mexico":"MEX","argentina":"ARG","germany":"DEU","poland":"POL","italy":"ITA","spain":"ESP","portugal":"PRT","romania":"ROU","georgia":"GEO","uzbekistan":"UZB","kazakhstan":"KAZ","united arab emirates":"ARE","uae":"ARE","singapore":"SGP" };
+    var PROG = { "global-volunteer":"GV", "global-talent":"GTa", "global-teacher":"GTe" };
+    var PLANE = '<svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M21 16v-2l-8-5V3.5a1.5 1.5 0 0 0-3 0V9l-8 5v2l8-2.5V19l-2 1.5V22l3.5-1 3.5 1v-1.5L13 19v-5.5l8 2.5Z" transform="rotate(90 12 12)"/></svg>';
+    var ARROW = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9"/></svg>';
+
+    function el(tag, cls, text){ var e = document.createElement(tag); if(cls) e.className = cls; if(text != null) e.textContent = text; return e; }
+    function code(country){ var c = String(country || "").trim(); return CODES[c.toLowerCase()] || c.replace(/[^A-Za-z]/g, "").slice(0, 3).toUpperCase() || "???"; }
+    function cleanTitle(t){ return String(t || "").replace(/\s*\[[^\]]*\]\s*/g, " ").trim(); }
+
+    /* ---------- Featured projects ---------- */
+    document.querySelectorAll("[data-featured]").forEach(function(section){
+      var list = (window.AIESEC_FEATURED || []).filter(function(p){ return p && /^https?:\/\//.test(p.url || ""); });
+      if(!list.length){ section.hidden = true; return; }
+      var grid = section.querySelector(".opp-grid");
+      var filters = section.querySelector(".opp-filters");
+      var count = section.querySelector(".opp-count");
+
+      list.forEach(function(p, i){
+        var m = String(p.url).match(/opportunity\/([a-z-]+)\/(\d+)/) || [];
+        var prog = PROG[m[1]] || section.getAttribute("data-programme") || "GV";
+        var id = m[2] || "";
+        var title = cleanTitle(p.title) || "Open project";
+
+        var card = el("article", "opp-card");
+        card.style.setProperty("--i", i);
+        card.setAttribute("data-country", p.country || "");
+
+        var route = el("div", "opp-route");
+        var from = el("div", "opp-port"); from.appendChild(el("b", null, "DAC")); from.appendChild(el("small", null, "Dhaka"));
+        var path = el("div", "opp-path"); path.innerHTML = PLANE;
+        var to = el("div", "opp-port opp-port--to"); to.appendChild(el("b", null, code(p.country))); to.appendChild(el("small", null, p.city || p.country || ""));
+        route.appendChild(from); route.appendChild(path); route.appendChild(to);
+        card.appendChild(route);
+
+        var body = el("div", "opp-body");
+        if(p.country) body.appendChild(el("p", "opp-country", p.country));
+        body.appendChild(el("h3", null, title));
+        if(p.org) body.appendChild(el("p", "opp-org", p.org));
+        if(p.summary) body.appendChild(el("p", "opp-sum", p.summary));
+        var meta = el("ul", "opp-meta");
+        if(p.duration) meta.appendChild(el("li", null, p.duration));
+        if(p.focus) meta.appendChild(el("li", null, p.focus));
+        if(p.salary) meta.appendChild(el("li", "pay", p.salary));
+        if(meta.children.length) body.appendChild(meta);
+        card.appendChild(body);
+
+        var stub = el("div", "opp-stub");
+        var apply = el("a", "opp-apply"); apply.href = p.url; apply.target = "_blank"; apply.rel = "noopener";
+        apply.innerHTML = "Apply<span class=\"opp-long\">&nbsp;on aiesec.org</span> " + ARROW;
+        apply.setAttribute("aria-label", "Apply for " + title + (p.country ? " in " + p.country : "") + " on aiesec.org (opens in a new tab)");
+        var view = el("a", "opp-view", "Need help?");
+        view.href = "apply.html?programme=" + prog + "&utm_source=website&utm_medium=featured-project&utm_campaign=" + encodeURIComponent((prog + "-" + id + " " + title).trim());
+        view.setAttribute("aria-label", "Get help from our team with " + title);
+        stub.appendChild(apply); stub.appendChild(view);
+        card.appendChild(stub);
+        grid.appendChild(card);
+      });
+
+      function show(country){
+        var n = 0;
+        grid.querySelectorAll(".opp-card").forEach(function(c){
+          var on = !country || c.getAttribute("data-country") === country;
+          c.hidden = !on; if(on) n++;
+        });
+        if(count) count.textContent = n + (n === 1 ? " project" : " projects") + (country ? " in " + country : "");
+        grid.scrollLeft = 0;
+      }
+
+      // Country filter chips — built automatically from the list
+      var countries = [];
+      list.forEach(function(p){ if(p.country && countries.indexOf(p.country) === -1) countries.push(p.country); });
+      if(filters && countries.length > 1){
+        var chips = [];
+        function chip(label, value, n){
+          var b = el("button", "opp-chip", label); b.type = "button";
+          var s = el("span", "n", String(n)); b.appendChild(s);
+          b.setAttribute("aria-pressed", value ? "false" : "true");
+          b.addEventListener("click", function(){
+            chips.forEach(function(c){ c.setAttribute("aria-pressed", "false"); });
+            b.setAttribute("aria-pressed", "true"); show(value);
+          });
+          chips.push(b); filters.appendChild(b);
+        }
+        chip("All", "", list.length);
+        countries.forEach(function(c){ chip(c, c, list.filter(function(p){ return p.country === c; }).length); });
+      } else if(filters){ filters.hidden = true; }
+      show("");
+    });
+
+    /* ---------- EP stories slider ---------- */
+    document.querySelectorAll("[data-stories]").forEach(function(section){
+      var list = (window.AIESEC_STORIES || []).filter(function(s){ return s && String(s.name || "").trim() && String(s.quote || "").trim(); });
+      // Preview: add ?preview=stories to the page address to see the layout before real stories are added
+      if(!list.length && /[?&]preview=stories\b/.test(location.search)){
+        list = [1,2,3].map(function(n){ return { name: "EP name " + n, country: "Host country", trip: "Programme & country", project: "Project name", lc: "AIESEC in Dhaka …", quote: "PREVIEW — this is where your EP's own words go: two or three sentences about what the experience was like and what changed for them. This preview only appears when ?preview=stories is in the address." }; });
+      }
+      if(!list.length){ section.hidden = true; return; }
+      var track = section.querySelector(".stories-track");
+      var dots = section.querySelector(".story-dots");
+      var nav = section.querySelector(".stories-nav");
+
+      list.forEach(function(s, i){
+        var fig = el("figure", "story");
+        fig.setAttribute("role", "group");
+        fig.setAttribute("aria-roledescription", "slide");
+        fig.setAttribute("aria-label", (i + 1) + " of " + list.length);
+        var ph = el("div", "story-photo");
+        var initials = el("span", "story-initials", String(s.name).trim().split(/\s+/).map(function(w){ return w.charAt(0); }).slice(0, 2).join("").toUpperCase());
+        ph.appendChild(initials);
+        if(s.photo){
+          var img = el("img"); img.src = s.photo; img.alt = s.name; img.loading = "lazy";
+          img.onerror = function(){ img.remove(); };
+          ph.appendChild(img);
+        }
+        if(s.country) ph.appendChild(el("span", "story-tag", s.country));
+        if(s.sample) ph.appendChild(el("span", "story-sample", "Sample"));
+        fig.appendChild(ph);
+
+        var body = el("div", "story-body");
+        body.appendChild(el("div", "story-mark", "“"));
+        body.appendChild(el("blockquote", "story-quote", s.quote));
+        var who = el("figcaption", "story-who");
+        var nm = el("strong", null, s.name);
+        if(s.from){ nm.appendChild(el("small", null, ", " + s.from)); }
+        who.appendChild(nm);
+        var line = [s.trip, s.project].filter(Boolean).join(" · ");
+        if(line) who.appendChild(el("span", null, line));
+        if(s.lc) who.appendChild(el("span", null, s.lc));
+        body.appendChild(who);
+        fig.appendChild(body);
+        track.appendChild(fig);
+
+        var d = el("button", "story-dot"); d.type = "button";
+        d.setAttribute("aria-label", "Show story " + (i + 1) + ": " + s.name);
+        d.addEventListener("click", function(){ go(i); restart(); });
+        dots.appendChild(d);
+      });
+
+      if(list.length < 2){ nav.hidden = true; }
+      var current = 0, timer = null;
+      var reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+      function go(i){ current = (i + list.length) % list.length; track.scrollTo({ left: current * track.clientWidth, behavior: reduce ? "auto" : "smooth" }); mark(); }
+      function mark(){ dots.querySelectorAll(".story-dot").forEach(function(d, j){ d.setAttribute("aria-current", j === current ? "true" : "false"); }); }
+      function restart(){ if(timer) clearInterval(timer); if(!reduce && list.length > 1) timer = setInterval(function(){ go(current + 1); }, 7000); }
+      section.querySelector(".story-btn--prev").addEventListener("click", function(){ go(current - 1); restart(); });
+      section.querySelector(".story-btn--next").addEventListener("click", function(){ go(current + 1); restart(); });
+      var t; track.addEventListener("scroll", function(){ clearTimeout(t); t = setTimeout(function(){ var i = Math.round(track.scrollLeft / track.clientWidth); if(i !== current){ current = i; mark(); } }, 80); }, { passive:true });
+      // Pause while someone is reading or using the slider
+      ["mouseenter","focusin","touchstart"].forEach(function(ev){ section.addEventListener(ev, function(){ if(timer) clearInterval(timer); timer = null; }, { passive:true }); });
+      section.addEventListener("mouseleave", restart);
+      window.addEventListener("resize", function(){ track.scrollLeft = current * track.clientWidth; });
+      mark(); restart();
+    });
+  })();
+  </script>
+  <!-- Come to Bangladesh: builds project cards + detail panel from CTB_PROJECTS. No need to edit this. -->
+  <script>
+  (function(){
+    "use strict";
+    var PROG = {
+      GV:  { name:"Global Volunteer", short:"Volunteer", color:"var(--volunteer)", page:"https://aiesec.org/global-volunteer" },
+      GTa: { name:"Global Talent",    short:"Intern",    color:"var(--talent)",    page:"https://aiesec.org/global-talent" },
+      GTe: { name:"Global Teacher",   short:"Teach",     color:"var(--teach)",     page:"https://aiesec.org/global-teacher" }
+    };
+    var ARROW = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>';
+    function el(tag, cls, text){ var e = document.createElement(tag); if(cls) e.className = cls; if(text != null) e.textContent = text; return e; }
+
+    var list = (window.CTB_PROJECTS || []).filter(function(p){ return p && p.title && PROG[p.programme]; });
+    var grid = document.querySelector(".ctb-grid");
+    var tabs = document.querySelectorAll(".ctb-tab");
+    var dialog = document.getElementById("ctb-dialog");
+    if(!grid) return;
+    if(!list.length){ document.getElementById("projects").hidden = true; return; }
+
+    list.forEach(function(p, i){
+      var pr = PROG[p.programme];
+      var card = el("button", "ctb-card");
+      card.type = "button";
+      card.style.setProperty("--c", pr.color);
+      card.style.setProperty("--i", i);
+      card.setAttribute("data-prog", p.programme);
+      card.setAttribute("aria-haspopup", "dialog");
+      card.setAttribute("aria-label", p.title + ", " + pr.name + (p.city ? ", " + p.city : "") + ". View details");
+
+      var ph = el("span", "ctb-card-photo");
+      if(p.photo){ var img = el("img"); img.src = p.photo; img.alt = ""; img.loading = "lazy"; img.onerror = function(){ img.remove(); }; ph.appendChild(img); }
+      ph.appendChild(el("span", "ctb-badge", pr.short));
+      if(p.sample) ph.appendChild(el("span", "ctb-sample", "Sample"));
+      card.appendChild(ph);
+
+      var body = el("span", "ctb-card-body");
+      if(p.city) body.appendChild(el("span", "ctb-card-loc", p.city + ", Bangladesh"));
+      body.appendChild(el("h3", null, p.title));
+      if(p.partner) body.appendChild(el("span", "ctb-card-partner", p.partner));
+      if(p.summary) body.appendChild(el("span", "ctb-card-sum", p.summary));
+      var meta = el("ul", "ctb-card-meta");
+      [p.duration, p.focus, p.salary].forEach(function(m){ if(m) meta.appendChild(el("li", null, m)); });
+      if(meta.children.length) body.appendChild(meta);
+      var more = el("span", "ctb-card-more"); more.innerHTML = "View project " + ARROW;
+      body.appendChild(more);
+      card.appendChild(body);
+
+      card.addEventListener("click", function(){ open(p, card); });
+      grid.appendChild(card);
+    });
+
+    // Tabs
+    function count(prog){ return list.filter(function(p){ return !prog || p.programme === prog; }).length; }
+    tabs.forEach(function(t){
+      var prog = t.getAttribute("data-prog");
+      var n = count(prog);
+      t.querySelector(".n").textContent = n;
+      if(prog && !n) t.hidden = true;
+      t.addEventListener("click", function(){
+        tabs.forEach(function(x){ x.setAttribute("aria-selected", x === t ? "true" : "false"); });
+        grid.querySelectorAll(".ctb-card").forEach(function(c){ c.hidden = !!prog && c.getAttribute("data-prog") !== prog; });
+      });
+    });
+    // Open a tab straight from the address, e.g. come-to-bangladesh.html?programme=GTa#projects
+    var want = new URLSearchParams(location.search).get("programme");
+    tabs.forEach(function(t){ if(want && t.getAttribute("data-prog") === want) t.click(); });
+
+    // Detail panel
+    var lastCard = null;
+    function section(sections, title, content){
+      if(!content || (Array.isArray(content) && !content.length)) return;
+      sections.appendChild(el("h3", null, title));
+      if(Array.isArray(content)){ var ul = el("ul"); content.forEach(function(x){ ul.appendChild(el("li", null, x)); }); sections.appendChild(ul); }
+      else sections.appendChild(el("p", null, content));
+    }
+    function open(p, card){
+      var pr = PROG[p.programme];
+      lastCard = card;
+      dialog.style.setProperty("--c", pr.color);
+      var img = dialog.querySelector(".ctb-d-photo img");
+      if(p.photo){ img.src = p.photo; img.hidden = false; } else { img.hidden = true; }
+      dialog.querySelector(".ctb-d-photo .ctb-sample").hidden = !p.sample;
+      dialog.querySelector(".ctb-d-prog").textContent = pr.name + (p.focus ? " · " + p.focus : "");
+      dialog.querySelector("#ctb-d-title").textContent = p.title;
+      dialog.querySelector(".ctb-d-partner").textContent = p.partner ? "Hosted with " + p.partner : "";
+      var facts = dialog.querySelector(".ctb-d-facts"); facts.innerHTML = "";
+      [["Location", p.city ? p.city + ", Bangladesh" : ""], ["Duration", p.duration], ["Dates", p.dates], [p.programme === "GV" ? "Focus" : "Salary", p.programme === "GV" ? p.focus : p.salary]].forEach(function(f){
+        if(!f[1]) return; var d = el("div"); d.appendChild(el("dt", null, f[0])); d.appendChild(el("dd", null, f[1])); facts.appendChild(d);
+      });
+      var s = dialog.querySelector(".ctb-d-sections"); s.innerHTML = "";
+      section(s, "About the project", p.about || p.summary);
+      section(s, "What you'll do", p.activities);
+      section(s, "Who we're looking for", p.requirements);
+      section(s, "What's provided", p.provided);
+      var apply = dialog.querySelector(".ctb-d-apply");
+      apply.href = p.url || pr.page;
+      apply.textContent = p.url ? "Apply on aiesec.org" : "Explore " + pr.name + " on aiesec.org";
+      dialog.querySelector(".ctb-d-body").scrollTop = 0;
+      document.body.classList.add("ctb-lock");
+      if(dialog.showModal) dialog.showModal(); else dialog.setAttribute("open", "");
+    }
+    function close(){ if(dialog.close) dialog.close(); else dialog.removeAttribute("open"); }
+    dialog.addEventListener("close", function(){ document.body.classList.remove("ctb-lock"); if(lastCard) lastCard.focus(); });
+    dialog.querySelector(".ctb-d-close").addEventListener("click", close);
+    dialog.addEventListener("click", function(e){ if(e.target === dialog) close(); });   // click outside the panel
+  })();
+  </script>
+
+</body>
+</html>
