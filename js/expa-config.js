@@ -28,7 +28,7 @@ window.AIESEC_BD_CONFIG = {
 
   /* 3) Where people who choose "Not sure / no preference" are sent.
         Must exactly match one of the names above. */
-  DEFAULT_LC: "AIESEC in Dhaka North",
+  DEFAULT_LC: "National Office",
 
   /* 4) Programme IDs used by EXPA. These are global AIESEC values
         (the same in every country) — you shouldn't need to change them. */
