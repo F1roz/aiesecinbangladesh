@@ -22,6 +22,7 @@ window.AIESEC_BD_CONFIG = {
     { name: "AIESEC in Dhaka North",        id: 2488 },
     { name: "AIESEC in Dhaka North East",   id: 6736 },
     { name: "AIESEC in Dhaka Central", id: 6738 },
+    { name: "National Office", id: 3943 }
 //     { name: "AIESEC in Dhaka South",        id: 0 }
   ],
 
