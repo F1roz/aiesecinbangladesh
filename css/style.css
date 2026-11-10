@@ -305,6 +305,9 @@
   .page-hero--talent{ background: linear-gradient(150deg,#087F85,var(--talent) 60%,#5FE1E7); }
   .page-hero--events{ background: linear-gradient(135deg,var(--events-a),#5A3CA8 45%, var(--events-b)); }
   .page-hero-figures{ position:absolute; right:-10px; bottom:-10px; height:60%; opacity:.85; }
+  /* Keep the walking figure as a small corner watermark on phones/tablets so it never sits behind the text */
+  @media (max-width: 900px){ .page-hero-figures{ height:auto; width:150px; right:-28px; bottom:-14px; opacity:.22; } }
+  @media (max-width: 480px){ .page-hero-figures{ width:120px; right:-30px; opacity:.18; } }
   
   /* Stat counters */
   .stat-strip{ background: var(--ink); color:#fff; padding: 56px 0; }
@@ -513,14 +516,27 @@
     transition: opacity .5s var(--ease), visibility .5s var(--ease);
   }
   #page-loader.is-hidden{ opacity:0; visibility:hidden; pointer-events:none; }
-  .loader-logo-slot{
-    width:120px; height:48px; display:flex; align-items:center; justify-content:center;
-    /* Placeholder for your static logo — replace this element's content in the HTML
-       (id="loader-logo") with an <img> tag pointing at your logo file. */
+  /* Walking AIESEC human: steps in place while the ground slides past */
+  .loader-walk{ position:relative; width:200px; height:118px; }
+  .loader-walker{
+    position:absolute; left:50%; bottom:10px; height:92px; width:auto; margin-left:-36px;
+    transform-origin:50% 100%; animation: walkerstep .9s ease-in-out infinite;
+    filter: drop-shadow(0 6px 10px rgba(0,0,0,.18));
   }
-  .loader-logo-slot img{ max-height:100%; max-width:100%; }
-  .loader-spinner{ width:34px; height:34px; border-radius:50%; border:2.5px solid rgba(255,255,255,.28); border-top-color:#fff; animation: loaderspin .8s linear infinite; }
-  @keyframes loaderspin{ to{ transform: rotate(360deg); } }
+  @keyframes walkerstep{
+    0%,50%,100%{ transform: translateY(0) rotate(0deg); }
+    25%{ transform: translateY(-5px) rotate(-1.5deg); }
+    75%{ transform: translateY(-5px) rotate(1.5deg); }
+  }
+  .loader-ground{
+    position:absolute; left:0; right:0; bottom:8px; height:3px; border-radius:3px;
+    background: repeating-linear-gradient(90deg, rgba(255,255,255,.85) 0 16px, transparent 16px 30px);
+    animation: groundslide .45s linear infinite;
+    -webkit-mask-image: linear-gradient(90deg, transparent, #000 22%, #000 78%, transparent);
+            mask-image: linear-gradient(90deg, transparent, #000 22%, #000 78%, transparent);
+  }
+  @keyframes groundslide{ to{ background-position:-30px 0; } }
+  @media (prefers-reduced-motion: reduce){ .loader-walker, .loader-ground{ animation:none; } }
   .loader-text{ color:#fff; font-family: var(--font-display); font-size:.8rem; letter-spacing:.08em; opacity:.85; }
   
   /* Reveal-on-scroll (single orchestrated pattern) */
