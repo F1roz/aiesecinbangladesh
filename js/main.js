@@ -13,11 +13,16 @@
       loader.classList.add("is-hidden");
       window.setTimeout(function(){ loader.remove(); }, 600);
     }
+    // Logo intro plays in full on the first page of a visit, faster on later pages
+    var introSeen = false;
+    try { introSeen = sessionStorage.getItem("aiesecIntroSeen") === "1"; sessionStorage.setItem("aiesecIntroSeen", "1"); } catch(err){}
+    var introMs = reduceMotion ? 0 : (introSeen ? 950 : 1750);
     window.addEventListener("load", function(){
-      window.setTimeout(hideLoader, reduceMotion ? 0 : 350);
+      var shown = (window.performance && performance.now) ? performance.now() : 0;
+      window.setTimeout(hideLoader, Math.max(150, introMs - shown));
     });
     // Fallback in case load event is delayed
-    window.setTimeout(hideLoader, 2200);
+    window.setTimeout(hideLoader, 4000);
   
     // Page-transition on internal link clicks
     document.addEventListener("click", function(e){

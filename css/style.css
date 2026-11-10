@@ -516,28 +516,38 @@
     transition: opacity .5s var(--ease), visibility .5s var(--ease);
   }
   #page-loader.is-hidden{ opacity:0; visibility:hidden; pointer-events:none; }
-  /* Walking AIESEC human: steps in place while the ground slides past */
-  .loader-walk{ position:relative; width:200px; height:118px; }
-  .loader-walker{
-    position:absolute; left:50%; bottom:10px; height:92px; width:auto; margin-left:-36px;
-    transform-origin:50% 100%; animation: walkerstep .9s ease-in-out infinite;
-    filter: drop-shadow(0 6px 10px rgba(0,0,0,.18));
+  /* AIESEC logo intro: the bar grows out from the walking human, the letters
+     appear one by one and the human walks forward leaving the evolution trail.
+     --lt scales all timings (1 = first visit, .55 = later pages). */
+  #page-loader{ background:#fff; --lt:1; }
+  #page-loader.is-quick{ --lt:.55; }
+  .lg{ position:relative; width:min(330px, 74vw); aspect-ratio: 396 / 70; }
+  .lg img{ display:block; max-width:none; }
+  .lg-bar img{ width:100%; height:100%; }
+  .lg-bar, .lg-crowd, .lg-walker{ position:absolute; top:0; height:100%; }
+  .lg-bar{ left:0; width:67.929%; animation: lgBar calc(.45s * var(--lt)) cubic-bezier(.2,.7,.2,1) both; }
+  .lg-cover{ position:absolute; left:11.152%; width:86.989%; top:12.857%; height:74.286%; background:#037EF3;
+    animation: lgLetters calc(.95s * var(--lt)) linear calc(.4s * var(--lt)) both; }
+  .lg-crowd{ left:calc(67.929% - 1px); width:calc(21.717% + 1px); animation: lgCrowd calc(.95s * var(--lt)) linear calc(.4s * var(--lt)) both; }
+  .lg-walker{ left:89.646%; width:10.354%;
+    animation: lgWalk calc(.95s * var(--lt)) linear calc(.4s * var(--lt)) both, lgBob calc(.34s * var(--lt)) ease-in-out 0s 4; }
+  @keyframes lgBar{ from{ clip-path: inset(0 0 0 100%); } to{ clip-path: inset(0 0 0 0); } }
+  @keyframes lgCrowd{ from{ clip-path: inset(0 100% 0 0); } to{ clip-path: inset(0 0 0 0); } }
+  @keyframes lgWalk{ from{ translate: -209.76% 0; } to{ translate: 0 0; } }
+  @keyframes lgBob{ 0%,100%{ transform: translateY(0); } 50%{ transform: translateY(-5%); } }
+  @keyframes lgLetters{
+    0%,8%{ clip-path: inset(0 0 0 0); }
+    8.01%,25%{ clip-path: inset(0 0 0 24.36%); }
+    25.01%,41%{ clip-path: inset(0 0 0 33.76%); }
+    41.01%,58%{ clip-path: inset(0 0 0 50%); }
+    58.01%,75%{ clip-path: inset(0 0 0 64.1%); }
+    75.01%,91%{ clip-path: inset(0 0 0 79.06%); }
+    91.01%,100%{ clip-path: inset(0 0 0 100%); }
   }
-  @keyframes walkerstep{
-    0%,50%,100%{ transform: translateY(0) rotate(0deg); }
-    25%{ transform: translateY(-5px) rotate(-1.5deg); }
-    75%{ transform: translateY(-5px) rotate(1.5deg); }
+  @media (prefers-reduced-motion: reduce){
+    .lg-bar, .lg-cover, .lg-crowd, .lg-walker{ animation:none; }
+    .lg-cover{ display:none; }
   }
-  .loader-ground{
-    position:absolute; left:0; right:0; bottom:8px; height:3px; border-radius:3px;
-    background: repeating-linear-gradient(90deg, rgba(255,255,255,.85) 0 16px, transparent 16px 30px);
-    animation: groundslide .45s linear infinite;
-    -webkit-mask-image: linear-gradient(90deg, transparent, #000 22%, #000 78%, transparent);
-            mask-image: linear-gradient(90deg, transparent, #000 22%, #000 78%, transparent);
-  }
-  @keyframes groundslide{ to{ background-position:-30px 0; } }
-  @media (prefers-reduced-motion: reduce){ .loader-walker, .loader-ground{ animation:none; } }
-  .loader-text{ color:#fff; font-family: var(--font-display); font-size:.8rem; letter-spacing:.08em; opacity:.85; }
   
   /* Reveal-on-scroll (single orchestrated pattern) */
   .reveal{ opacity:0; transform: translateY(22px); transition: opacity .7s var(--ease), transform .7s var(--ease); }
